@@ -17,6 +17,9 @@ export default function HeroSection() {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
 
+      {/* Subtle Blur Overlay */}
+      <div className="absolute inset-0 backdrop-blur-[3px] pointer-events-none"></div>
+
       {/* Fade transition overlay */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-20"></div>
 

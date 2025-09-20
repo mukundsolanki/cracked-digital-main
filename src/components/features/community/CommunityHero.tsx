@@ -18,7 +18,7 @@ export default function CommunityHero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80"></div>
 
       <div className="relative z-10 text-center">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 font-serif">
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8">
           Coming Soon
         </h1>
         <p className="text-2xl md:text-3xl text-white/70">
