@@ -42,6 +42,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* SVG Filter for Glass Distortion */}
+        <svg style={{ display: 'none' }}>
+          <filter id="glass-distortion">
+            <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+          </filter>
+        </svg>
+        
         <Header />
         {children}
         <Footer />

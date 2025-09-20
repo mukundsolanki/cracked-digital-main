@@ -41,6 +41,120 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+/* Liquid Glass Navigation Styles */
+.glass-nav-container {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: auto;
+  padding: 0;
+}
+
+.glass-nav {
+  --bg-color: rgba(0, 0, 0, 0.25);
+  --highlight: rgba(255, 255, 255, 0.15);
+  --text: #ffffff;
+  
+  position: relative;
+  width: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.glass-filter,
+.glass-overlay,
+.glass-specular {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.glass-filter {
+  z-index: 1;
+  backdrop-filter: blur(4px);
+  filter: url(#glass-distortion) saturate(120%) brightness(1.15);
+}
+
+.glass-overlay {
+  z-index: 2;
+  background: var(--bg-color);
+}
+
+.glass-specular {
+  z-index: 3;
+  box-shadow: inset 1px 1px 1px var(--highlight);
+}
+
+.glass-content {
+  position: relative;
+  z-index: 4;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-item {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+  position: relative;
+  background-color: transparent;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #fbbf24; /* yellow-400 */
+  border-radius: 1px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .glass-nav-container {
+    top: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .nav-item {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
 /* Custom Animations */
 @keyframes fade-in-up {
   from {
