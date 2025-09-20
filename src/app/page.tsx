@@ -1,7 +1,6 @@
 import HeroSection from '@/components/features/home/HeroSection';
 import FeaturesSection from '@/components/features/home/FeaturesSection';
 import CommunityStats from '@/components/features/home/CommunityStats';
-import TestimonialsSection from '@/components/features/home/TestimonialsSection';
 import CTASection from '@/components/features/home/CTASection';
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <CommunityStats />
-      <TestimonialsSection />
       <CTASection />
     </main>
   );

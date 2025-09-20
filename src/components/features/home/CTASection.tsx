@@ -68,57 +68,6 @@ export default function CTASection() {
                 <ArrowRightIcon className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </Link>
-            <Link
-              href="/explore"
-              className="group border-2 border-white/50 text-white px-12 py-5 rounded-2xl text-xl font-bold hover:bg-white hover:text-blue-600 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
-            >
-              Explore Resources
-            </Link>
-          </div>
-
-          {/* Enhanced Trust Indicators */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 max-w-5xl mx-auto border border-white/20 relative overflow-hidden">
-            {/* Background pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-full h-full" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`
-              }}></div>
-            </div>
-            
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-              <div className="group">
-                <div className="text-5xl md:text-6xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">
-                  10K+
-                </div>
-                <div className="text-blue-200 text-lg font-medium">Active Members</div>
-                <div className="text-blue-300 text-sm mt-2">Growing daily</div>
-              </div>
-              <div className="group">
-                <div className="text-5xl md:text-6xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">
-                  500+
-                </div>
-                <div className="text-blue-200 text-lg font-medium">Success Stories</div>
-                <div className="text-blue-300 text-sm mt-2">Real transformations</div>
-              </div>
-              <div className="group">
-                <div className="text-5xl md:text-6xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">
-                  98%
-                </div>
-                <div className="text-blue-200 text-lg font-medium">Satisfaction Rate</div>
-                <div className="text-blue-300 text-sm mt-2">Member approved</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Enhanced Final Message */}
-          <div className="mt-16">
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-8 py-4">
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <p className="text-blue-100 text-lg font-medium">
-                Don't wait. Start your journey today and become part of the most supportive 
-                technical community on the web.
-              </p>
-            </div>
           </div>
         </div>
       </div>
