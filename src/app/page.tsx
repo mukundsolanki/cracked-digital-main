@@ -1,7 +1,6 @@
 import HeroSection from '@/components/features/home/HeroSection';
 import FeaturesSection from '@/components/features/home/FeaturesSection';
 import CommunityStats from '@/components/features/home/CommunityStats';
-import CTASection from '@/components/features/home/CTASection';
 
 export default function Home() {
   return (
@@ -9,7 +8,6 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <CommunityStats />
-      <CTASection />
     </main>
   );
 }

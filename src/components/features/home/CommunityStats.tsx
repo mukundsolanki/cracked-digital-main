@@ -105,33 +105,6 @@ export default function CommunityStats() {
             </div>
           ))}
         </div>
-
-        {/* Additional Info */}
-        <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Join the Movement
-            </h3>
-            <p className="text-lg text-gray-600 mb-6">
-              Be part of a community that's shaping the future of technology. 
-              Whether you're a beginner or an expert, there's a place for you here.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/join"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-              >
-                Join Now
-              </a>
-              <a
-                href="/about"
-                className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
 
       <style jsx>{`
