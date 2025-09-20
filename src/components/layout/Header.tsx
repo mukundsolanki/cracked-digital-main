@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState('home');
+  const pathname = usePathname();
 
   // Handle navigation item clicks
-  const handleNavClick = (item: string) => {
-    setActiveItem(item);
+  const handleNavClick = () => {
     setIsMenuOpen(false); // Close mobile menu on item click
   };
 
@@ -26,8 +26,8 @@ export default function Header() {
               <li>
                 <Link 
                   href="/" 
-                  className={`nav-item ${activeItem === 'home' ? 'active' : ''}`}
-                  onClick={() => handleNavClick('home')}
+                  className={`nav-item ${pathname === '/' ? 'active' : ''}`}
+                  onClick={handleNavClick}
                 >
                   Home
                 </Link>
@@ -35,8 +35,8 @@ export default function Header() {
               <li>
                 <Link 
                   href="/about" 
-                  className={`nav-item ${activeItem === 'about' ? 'active' : ''}`}
-                  onClick={() => handleNavClick('about')}
+                  className={`nav-item ${pathname === '/about' ? 'active' : ''}`}
+                  onClick={handleNavClick}
                 >
                   About
                 </Link>
@@ -44,8 +44,8 @@ export default function Header() {
               <li>
                 <Link 
                   href="/community" 
-                  className={`nav-item ${activeItem === 'community' ? 'active' : ''}`}
-                  onClick={() => handleNavClick('community')}
+                  className={`nav-item ${pathname === '/community' ? 'active' : ''}`}
+                  onClick={handleNavClick}
                 >
                   Community
                 </Link>
@@ -53,8 +53,8 @@ export default function Header() {
               <li>
                 <Link 
                   href="/contact" 
-                  className={`nav-item ${activeItem === 'contact' ? 'active' : ''}`}
-                  onClick={() => handleNavClick('contact')}
+                  className={`nav-item ${pathname === '/contact' ? 'active' : ''}`}
+                  onClick={handleNavClick}
                 >
                   Contact
                 </Link>
@@ -85,8 +85,8 @@ export default function Header() {
                 <li>
                   <Link 
                     href="/" 
-                    className={`nav-item ${activeItem === 'home' ? 'active' : ''}`}
-                    onClick={() => handleNavClick('home')}
+                    className={`nav-item ${pathname === '/' ? 'active' : ''}`}
+                    onClick={handleNavClick}
                   >
                     Home
                   </Link>
@@ -94,8 +94,8 @@ export default function Header() {
                 <li>
                   <Link 
                     href="/about" 
-                    className={`nav-item ${activeItem === 'about' ? 'active' : ''}`}
-                    onClick={() => handleNavClick('about')}
+                    className={`nav-item ${pathname === '/about' ? 'active' : ''}`}
+                    onClick={handleNavClick}
                   >
                     About
                   </Link>
@@ -103,8 +103,8 @@ export default function Header() {
                 <li>
                   <Link 
                     href="/community" 
-                    className={`nav-item ${activeItem === 'community' ? 'active' : ''}`}
-                    onClick={() => handleNavClick('community')}
+                    className={`nav-item ${pathname === '/community' ? 'active' : ''}`}
+                    onClick={handleNavClick}
                   >
                     Community
                   </Link>
@@ -112,8 +112,8 @@ export default function Header() {
                 <li>
                   <Link 
                     href="/contact" 
-                    className={`nav-item ${activeItem === 'contact' ? 'active' : ''}`}
-                    onClick={() => handleNavClick('contact')}
+                    className={`nav-item ${pathname === '/contact' ? 'active' : ''}`}
+                    onClick={handleNavClick}
                   >
                     Contact
                   </Link>
