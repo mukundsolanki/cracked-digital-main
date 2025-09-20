@@ -335,9 +335,9 @@ export default function ContactForm() {
               Ready to Make an Impact?
             </h3>
             <p className='text-xl text-blue-100 mb-8 max-w-3xl mx-auto'>
-              Join our mission to empower developers worldwide. Whether you're a
-              mentor, speaker, or passionate about developer education, we'd
-              love to hear from you.
+              Join our mission to empower developers worldwide. Whether
+              you&apos;re a mentor, speaker, or passionate about developer
+              education, we&apos;d love to hear from you.
             </p>
             <button
               onClick={() => handleEmailClick('hello@cracked.digital')}

@@ -144,7 +144,7 @@ export default function TeamSection() {
               Want to Join Our Team?
             </h3>
             <p className='text-xl text-gray-300 mb-8'>
-              We're always looking for passionate individuals who share our
+              We&apos;re always looking for passionate individuals who share our
               vision of empowering developers worldwide.
             </p>
             <a

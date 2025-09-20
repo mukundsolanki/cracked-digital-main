@@ -15,9 +15,9 @@ export default function ContactHero() {
             <span className='text-blue-600'> Us</span>
           </h1>
           <p className='text-xl md:text-2xl text-gray-600 max-w-4xl leading-relaxed text-left'>
-            Ready to collaborate? We're always looking for mentors, speakers,
-            and passionate individuals to join our community and help developers
-            grow.
+            Ready to collaborate? We&apos;re always looking for mentors,
+            speakers, and passionate individuals to join our community and help
+            developers grow.
           </p>
         </div>
       </div>

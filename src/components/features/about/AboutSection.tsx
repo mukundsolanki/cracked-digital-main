@@ -55,7 +55,7 @@ export default function AboutSection() {
             support they need to excel in their careers and contribute
             meaningfully to the tech industry. We believe that great software is
             built by great developers, and great developers are nurtured in
-            great communities. Our vision is to become the world's leading
+            great communities. Our vision is to become the world&apos;s leading
             platform for technical education and developer community, where
             anyone can learn, grow, and achieve their full potential. We
             envision a future where technology education is accessible,
