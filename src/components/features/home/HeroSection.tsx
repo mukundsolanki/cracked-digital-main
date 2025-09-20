@@ -27,7 +27,7 @@ export default function HeroSection() {
         <div className="text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
             <span className="text-sm font-medium text-white/90">Join 10,000+ developers worldwide</span>
           </div>
 

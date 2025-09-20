@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import MaskTransition from "@/components/ui/MaskTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,9 +51,11 @@ export default function RootLayout({
           </filter>
         </svg>
         
-        <Header />
-        {children}
-        <Footer />
+        <MaskTransition maskType="jagged-mask" delay={200} duration={2000}>
+          <Header />
+          {children}
+          <Footer />
+        </MaskTransition>
       </body>
     </html>
   );

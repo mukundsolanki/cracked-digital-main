@@ -158,6 +158,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -350,6 +354,64 @@ body {
   }
 }
 
+@keyframes slide-up-fade {
+  from { 
+    transform: translateY(60px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes stagger-fade-in {
+  from { 
+    transform: translateY(40px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 30px rgba(59, 130, 246, 0.2);
+  }
+}
+
+@keyframes text-reveal {
+  from { 
+    clip-path: inset(0 100% 0 0);
+  }
+  to { 
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+@keyframes scale-in {
+  from { 
+    transform: scale(0.8); 
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
 /* Animation Utility Classes */
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
@@ -367,6 +429,200 @@ body {
   animation: fade-in-right 0.8s ease-out forwards;
 }
 
+/* Mask Transition Animations */
+@keyframes mask-reveal {
+  0% {
+    clip-path: circle(100% at 50% 50%);
+    opacity: 1;
+  }
+  50% {
+    clip-path: circle(50% at 50% 50%);
+    opacity: 0.8;
+  }
+  100% {
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0;
+  }
+}
+
+@keyframes mask-slide-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes mask-scale-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Jagged SVG Mask Animations */
+@keyframes jagged-mask-reveal {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
+  }
+  25% {
+    clip-path: polygon(
+      10% 20%, 90% 10%, 85% 30%, 95% 50%, 
+      80% 70%, 90% 90%, 20% 85%, 5% 60%, 
+      15% 40%, 0% 25%
+    );
+    opacity: 0.9;
+  }
+  50% {
+    clip-path: polygon(
+      20% 40%, 70% 20%, 60% 50%, 80% 70%, 
+      50% 80%, 60% 90%, 30% 85%, 10% 70%, 
+      25% 50%, 0% 40%
+    );
+    opacity: 0.7;
+  }
+  75% {
+    clip-path: polygon(
+      30% 60%, 50% 40%, 40% 70%, 60% 80%, 
+      40% 90%, 50% 95%, 35% 90%, 20% 80%, 
+      30% 70%, 25% 60%
+    );
+    opacity: 0.4;
+  }
+  100% {
+    clip-path: polygon(
+      45% 75%, 50% 70%, 48% 80%, 52% 85%, 
+      48% 90%, 50% 95%, 47% 92%, 45% 85%, 
+      47% 80%, 46% 75%
+    );
+    opacity: 0;
+  }
+}
+
+@keyframes star-burst-reveal {
+  0% {
+    clip-path: polygon(
+      50% 0%, 61% 35%, 98% 35%, 68% 57%, 
+      79% 91%, 50% 70%, 21% 91%, 32% 57%, 
+      2% 35%, 39% 35%
+    );
+    opacity: 1;
+  }
+  20% {
+    clip-path: polygon(
+      50% 10%, 55% 40%, 80% 40%, 60% 55%, 
+      70% 85%, 50% 75%, 30% 85%, 40% 55%, 
+      20% 40%, 45% 40%
+    );
+    opacity: 0.8;
+  }
+  40% {
+    clip-path: polygon(
+      50% 20%, 52% 45%, 70% 45%, 55% 55%, 
+      62% 80%, 50% 75%, 38% 80%, 45% 55%, 
+      30% 45%, 48% 45%
+    );
+    opacity: 0.6;
+  }
+  60% {
+    clip-path: polygon(
+      50% 30%, 51% 48%, 65% 48%, 52% 55%, 
+      58% 75%, 50% 72%, 42% 75%, 48% 55%, 
+      35% 48%, 49% 48%
+    );
+    opacity: 0.4;
+  }
+  80% {
+    clip-path: polygon(
+      50% 40%, 50.5% 50%, 60% 50%, 50% 55%, 
+      55% 70%, 50% 68%, 45% 70%, 48% 55%, 
+      40% 50%, 49.5% 50%
+    );
+    opacity: 0.2;
+  }
+  100% {
+    clip-path: polygon(
+      50% 48%, 50% 50%, 52% 50%, 50% 52%, 
+      51% 55%, 50% 54%, 49% 55%, 50% 52%, 
+      48% 50%, 50% 50%
+    );
+    opacity: 0;
+  }
+}
+
+@keyframes lightning-reveal {
+  0% {
+    clip-path: polygon(
+      0% 0%, 100% 0%, 100% 100%, 0% 100%
+    );
+    opacity: 1;
+  }
+  25% {
+    clip-path: polygon(
+      0% 0%, 30% 20%, 20% 40%, 60% 30%, 
+      50% 60%, 80% 50%, 70% 80%, 100% 70%, 
+      100% 100%, 0% 100%
+    );
+    opacity: 0.8;
+  }
+  50% {
+    clip-path: polygon(
+      10% 10%, 40% 30%, 30% 50%, 50% 40%, 
+      45% 70%, 70% 60%, 60% 90%, 90% 80%, 
+      90% 90%, 10% 90%
+    );
+    opacity: 0.5;
+  }
+  75% {
+    clip-path: polygon(
+      20% 20%, 45% 40%, 40% 60%, 55% 50%, 
+      50% 75%, 65% 70%, 60% 85%, 80% 80%, 
+      80% 85%, 20% 85%
+    );
+    opacity: 0.3;
+  }
+  100% {
+    clip-path: polygon(
+      45% 45%, 48% 48%, 47% 52%, 52% 50%, 
+      51% 55%, 53% 53%, 52% 55%, 48% 52%, 
+      47% 48%, 45% 45%
+    );
+    opacity: 0;
+  }
+}
+
+.animate-mask-reveal {
+  animation: mask-reveal 1.2s ease-in-out forwards;
+}
+
+.animate-mask-slide-up {
+  animation: mask-slide-up 1s ease-out forwards;
+}
+
+.animate-mask-scale-out {
+  animation: mask-scale-out 1.5s ease-out forwards;
+}
+
+.animate-jagged-mask {
+  animation: jagged-mask-reveal 2s ease-in-out forwards;
+}
+
+.animate-star-burst {
+  animation: star-burst-reveal 2.5s ease-in-out forwards;
+}
+
+.animate-lightning-reveal {
+  animation: lightning-reveal 2.2s ease-in-out forwards;
+}
+
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient 3s ease infinite;
@@ -379,6 +635,50 @@ body {
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+.animate-slide-up-fade {
+  animation: slide-up-fade 0.8s ease-out forwards;
+}
+
+.animate-stagger-fade-in {
+  animation: stagger-fade-in 0.6s ease-out forwards;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-text-reveal {
+  animation: text-reveal 1s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out forwards;
+}
+
+/* Scroll-triggered animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animations */
+.animate-stagger-1 { animation-delay: 0.1s; }
+.animate-stagger-2 { animation-delay: 0.2s; }
+.animate-stagger-3 { animation-delay: 0.3s; }
+.animate-stagger-4 { animation-delay: 0.4s; }
+.animate-stagger-5 { animation-delay: 0.5s; }
+.animate-stagger-6 { animation-delay: 0.6s; }
 
 /* Smooth scrolling */
 html {

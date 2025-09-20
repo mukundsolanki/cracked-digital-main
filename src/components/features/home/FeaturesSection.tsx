@@ -1,3 +1,6 @@
+'use client';
+
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import {
   CodeBracketIcon,
   UserGroupIcon,
@@ -30,8 +33,11 @@ const features = [
 ];
 
 export default function FeaturesSection() {
+  const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLElement>({ threshold: 0.1 });
+  const [headerRef, isHeaderVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
+
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-24 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-64 h-64 bg-blue-100 rounded-full blur-3xl"></div>
@@ -40,7 +46,7 @@ export default function FeaturesSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20">
         {/* Section Header - Left Aligned */}
-        <div className="mb-20">
+        <div  ref={headerRef} className={`mb-20 transition-all duration-1000 ${isHeaderVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 text-left">
             Why Choose{" "}
             <span className="bg-yellow-600 bg-clip-text text-transparent">
@@ -60,7 +66,10 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-gray-50 p-8 rounded-3xl border border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+              className={`group relative bg-gray-50 p-8 rounded-3xl border border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden animate-on-scroll ${
+                isSectionVisible ? 'animated' : ''
+              }`}
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Gradient Background on Hover */}
               <div

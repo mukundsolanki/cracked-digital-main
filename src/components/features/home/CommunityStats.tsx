@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const stats = [
   {
@@ -41,6 +42,7 @@ const getColorClasses = (color: string) => {
 
 export default function CommunityStats() {
   const [isVisible, setIsVisible] = useState(false);
+  const [sectionRef, isSectionVisible] = useScrollAnimation({ threshold: 0.1 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,10 +67,10 @@ export default function CommunityStats() {
   }, []);
 
   return (
-    <section id="stats-section" className="py-20 bg-gradient-to-r from-gray-50 to-blue-50">
+    <section ref={sectionRef} id="stats-section" className="py-20 bg-gradient-to-r from-gray-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Our Growing Community
           </h2>
@@ -82,7 +84,8 @@ export default function CommunityStats() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center group"
+              className={`text-center group animate-on-scroll ${isSectionVisible ? 'animated' : ''}`}
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Stat Number */}
               <div className="relative mb-4">
