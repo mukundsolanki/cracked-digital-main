@@ -43,7 +43,7 @@ export default function FeaturesSection() {
         <div className="mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 text-left">
             Why Choose{" "}
-            <span className="bg-yellow-500 bg-clip-text text-transparent">
+            <span className="bg-yellow-600 bg-clip-text text-transparent">
               CRACKED
             </span>
             ?
@@ -69,7 +69,7 @@ export default function FeaturesSection() {
 
               {/* Icon */}
               <div
-                className={`relative w-16 h-16 rounded-2xl bg-yellow-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                className={`relative w-16 h-16 rounded-2xl bg-yellow-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
               >
                 <feature.icon className="w-8 h-8 text-white" />
               </div>

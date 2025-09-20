@@ -85,7 +85,7 @@ export default function TeamSection() {
         <div className="mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 text-left">
             Meet Our
-            <span className="text-yellow-400"> Team</span>
+            <span className="text-yellow-600"> Team</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl leading-relaxed text-left">
             The passionate individuals behind CRACKED, dedicated to empowering developers worldwide.
@@ -104,17 +104,17 @@ export default function TeamSection() {
                 <img
                   src={member.avatar}
                   alt={member.name}
-                  className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-yellow-400/30 group-hover:border-yellow-400 transition-all duration-300"
+                  className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-yellow-600/30 group-hover:border-yellow-600 transition-all duration-300"
                 />
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-yellow-400 rounded-full"></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-yellow-600 rounded-full"></div>
               </div>
 
               {/* Content */}
               <div className="text-center">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-600 transition-colors duration-300">
                   {member.name}
                 </h3>
-                <p className="text-yellow-400 font-medium text-sm mb-4">
+                <p className="text-yellow-600 font-medium text-sm mb-4">
                   {member.role}
                 </p>
                 <p className="text-gray-300 text-sm leading-relaxed mb-6">
@@ -125,7 +125,7 @@ export default function TeamSection() {
                 <div className="flex justify-center space-x-4">
                   <a
                     href={member.social.linkedin}
-                    className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all duration-300"
+                    className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-600 hover:text-black transition-all duration-300"
                     aria-label="LinkedIn"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -134,7 +134,7 @@ export default function TeamSection() {
                   </a>
                   <a
                     href={member.social.twitter}
-                    className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all duration-300"
+                    className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-600 hover:text-black transition-all duration-300"
                     aria-label="Twitter"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -143,7 +143,7 @@ export default function TeamSection() {
                   </a>
                   <a
                     href={`mailto:${member.social.email}`}
-                    className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all duration-300"
+                    className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-600 hover:text-black transition-all duration-300"
                     aria-label="Email"
                   >
                     <EnvelopeIcon className="w-4 h-4" />
@@ -152,7 +152,7 @@ export default function TeamSection() {
               </div>
 
               {/* Decorative Element */}
-              <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>
@@ -168,7 +168,7 @@ export default function TeamSection() {
             </p>
             <a
               href="/careers"
-              className="inline-flex items-center gap-2 bg-yellow-400 text-black px-8 py-4 rounded-2xl font-semibold hover:bg-yellow-500 transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 bg-yellow-600 text-black px-8 py-4 rounded-2xl font-semibold hover:bg-yellow-700 transition-all duration-300 hover:scale-105"
             >
               View Open Positions
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

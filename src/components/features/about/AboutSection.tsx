@@ -44,32 +44,9 @@ export default function AboutSection() {
             Our
             <span className="text-yellow-600"> Story</span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl leading-relaxed text-left">
-            Founded with a vision to democratize technical education and create a supportive ecosystem for developers worldwide.
+          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed text-left">
+            Founded with a vision to democratize technical education and create a supportive ecosystem for developers worldwide. We empower developers of all levels with the knowledge, tools, and community support they need to excel in their careers and contribute meaningfully to the tech industry. We believe that great software is built by great developers, and great developers are nurtured in great communities. Our vision is to become the world's leading platform for technical education and developer community, where anyone can learn, grow, and achieve their full potential. We envision a future where technology education is accessible, practical, and driven by real-world applications.
           </p>
-        </div>
-
-        {/* Mission & Vision */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-          <div className="bg-gray-50 p-8 rounded-3xl">
-            <h3 className="text-3xl font-bold text-black mb-6">Our Mission</h3>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              To empower developers of all levels with the knowledge, tools, and community support they need to excel in their careers and contribute meaningfully to the tech industry.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              We believe that great software is built by great developers, and great developers are nurtured in great communities.
-            </p>
-          </div>
-          
-          <div className="bg-gray-50 p-8 rounded-3xl">
-            <h3 className="text-3xl font-bold text-black mb-6">Our Vision</h3>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              To become the world's leading platform for technical education and developer community, where anyone can learn, grow, and achieve their full potential.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              We envision a future where technology education is accessible, practical, and driven by real-world applications.
-            </p>
-          </div>
         </div>
 
         {/* Values Grid */}
@@ -77,10 +54,10 @@ export default function AboutSection() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="group relative bg-white p-8 rounded-3xl border border-gray-200 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+              className="group relative bg-white p-8 rounded-3xl border border-gray-200 hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
             >
               {/* Icon */}
-              <div className="relative w-16 h-16 rounded-2xl bg-yellow-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <div className="relative w-16 h-16 rounded-2xl bg-yellow-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <value.icon className="w-8 h-8 text-white" />
               </div>
 
@@ -93,7 +70,7 @@ export default function AboutSection() {
               </p>
 
               {/* Decorative Element */}
-              <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>

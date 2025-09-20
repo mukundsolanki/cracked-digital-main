@@ -1,12 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import { 
   AcademicCapIcon,
   MicrophoneIcon,
   UserGroupIcon,
   EnvelopeIcon,
   MapPinIcon,
-  PhoneIcon
+  PhoneIcon,
+  PaperAirplaneIcon
 } from '@heroicons/react/24/outline';
 
 const contactOptions = [
@@ -58,8 +60,44 @@ const contactInfo = [
 ];
 
 export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+    category: 'general'
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleEmailClick = (email: string) => {
     window.location.href = `mailto:${email}`;
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      alert('Thank you for your message! We\'ll get back to you soon.');
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+        category: 'general'
+      });
+    }, 2000);
   };
 
   return (
@@ -71,6 +109,125 @@ export default function ContactForm() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20">
+        {/* Contact Form */}
+        <div className="mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-12 text-left">
+            Send Us a Message
+          </h2>
+          
+          <div className="bg-white rounded-3xl p-12 shadow-lg border border-gray-200">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-3">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-3">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    placeholder="Enter your email address"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <label htmlFor="category" className="block text-sm font-semibold text-gray-700 mb-3">
+                    Category *
+                  </label>
+                  <select
+                    id="category"
+                    name="category"
+                    value={formData.category}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  >
+                    <option value="general">General Inquiry</option>
+                    <option value="mentorship">Mentorship</option>
+                    <option value="speaking">Speaking Opportunity</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="support">Technical Support</option>
+                    <option value="feedback">Feedback</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-3">
+                    Subject *
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    placeholder="What's this about?"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-3">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                  placeholder="Tell us more about your inquiry..."
+                />
+              </div>
+
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center gap-3"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <PaperAirplaneIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                      Send Message
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
         {/* Contact Options */}
         <div className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-12 text-left">
