@@ -14,18 +14,18 @@ export default function Header() {
   };
 
   return (
-    <header className="glass-nav-container">
-      <nav className="glass-nav">
-        <div className="glass-filter"></div>
-        <div className="glass-overlay"></div>
-        <div className="glass-specular"></div>
-        <div className="glass-content">
+    <header className='glass-nav-container'>
+      <nav className='glass-nav'>
+        <div className='glass-filter'></div>
+        <div className='glass-overlay'></div>
+        <div className='glass-specular'></div>
+        <div className='glass-content'>
           {/* Desktop Navigation - Perfectly Centered */}
-          <nav className="hidden md:block">
-            <ul className="nav-list">
+          <nav className='hidden md:block'>
+            <ul className='nav-list'>
               <li>
-                <Link 
-                  href="/" 
+                <Link
+                  href='/'
                   className={`nav-item ${pathname === '/' ? 'active' : ''}`}
                   onClick={handleNavClick}
                 >
@@ -33,8 +33,8 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/about" 
+                <Link
+                  href='/about'
                   className={`nav-item ${pathname === '/about' ? 'active' : ''}`}
                   onClick={handleNavClick}
                 >
@@ -42,8 +42,8 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/community" 
+                <Link
+                  href='/community'
                   className={`nav-item ${pathname === '/community' ? 'active' : ''}`}
                   onClick={handleNavClick}
                 >
@@ -51,8 +51,8 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/contact" 
+                <Link
+                  href='/contact'
                   className={`nav-item ${pathname === '/contact' ? 'active' : ''}`}
                   onClick={handleNavClick}
                 >
@@ -63,16 +63,31 @@ export default function Header() {
           </nav>
 
           {/* Mobile menu button - Separate container */}
-          <div className="md:hidden flex justify-center">
+          <div className='md:hidden flex justify-center'>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="nav-item"
+              className='nav-item'
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg
+                className='h-6 w-6'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
                 {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M6 18L18 6M6 6l12 12'
+                  />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M4 6h16M4 12h16M4 18h16'
+                  />
                 )}
               </svg>
             </button>
@@ -80,11 +95,11 @@ export default function Header() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden mt-4 pt-4 border-t border-white/20">
-              <ul className="nav-list flex-col space-y-2">
+            <div className='md:hidden mt-4 pt-4 border-t border-white/20'>
+              <ul className='nav-list flex-col space-y-2'>
                 <li>
-                  <Link 
-                    href="/" 
+                  <Link
+                    href='/'
                     className={`nav-item ${pathname === '/' ? 'active' : ''}`}
                     onClick={handleNavClick}
                   >
@@ -92,8 +107,8 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/about" 
+                  <Link
+                    href='/about'
                     className={`nav-item ${pathname === '/about' ? 'active' : ''}`}
                     onClick={handleNavClick}
                   >
@@ -101,8 +116,8 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/community" 
+                  <Link
+                    href='/community'
                     className={`nav-item ${pathname === '/community' ? 'active' : ''}`}
                     onClick={handleNavClick}
                   >
@@ -110,8 +125,8 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/contact" 
+                  <Link
+                    href='/contact'
                     className={`nav-item ${pathname === '/contact' ? 'active' : ''}`}
                     onClick={handleNavClick}
                   >

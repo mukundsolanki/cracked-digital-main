@@ -4,7 +4,7 @@ import CommunityStats from '@/components/features/home/CommunityStats';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className='min-h-screen bg-black'>
       <HeroSection />
       <FeaturesSection />
       <CommunityStats />

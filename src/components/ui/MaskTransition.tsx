@@ -4,7 +4,13 @@ import { useState, useEffect } from 'react';
 
 interface MaskTransitionProps {
   children: React.ReactNode;
-  maskType?: 'reveal' | 'slide-up' | 'scale-out' | 'jagged-mask' | 'star-burst' | 'lightning-reveal';
+  maskType?:
+    | 'reveal'
+    | 'slide-up'
+    | 'scale-out'
+    | 'jagged-mask'
+    | 'star-burst'
+    | 'lightning-reveal';
   duration?: number;
   delay?: number;
   maskColor?: string;
@@ -15,7 +21,7 @@ export default function MaskTransition({
   maskType = 'reveal',
   duration = 1200,
   delay = 0,
-  maskColor = '#000000'
+  maskColor = '#000000',
 }: MaskTransitionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [maskVisible, setMaskVisible] = useState(true);
@@ -55,9 +61,11 @@ export default function MaskTransition({
   };
 
   return (
-    <div className="relative overflow-hidden">
+    <div className='relative overflow-hidden'>
       {/* Content */}
-      <div className={`transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <div
+        className={`transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+      >
         {children}
       </div>
 
@@ -68,7 +76,7 @@ export default function MaskTransition({
           style={{
             backgroundColor: maskColor,
             animationDuration: `${duration}ms`,
-            animationDelay: `${delay}ms`
+            animationDelay: `${delay}ms`,
           }}
         />
       )}

@@ -198,7 +198,9 @@ export const cssVariables = {
 
 // Utility function to get color with opacity
 export const withOpacity = (color: string, opacity: number): string => {
-  return `${color}${Math.round(opacity * 255).toString(16).padStart(2, '0')}`;
+  return `${color}${Math.round(opacity * 255)
+    .toString(16)
+    .padStart(2, '0')}`;
 };
 
 // Type definitions for better TypeScript support

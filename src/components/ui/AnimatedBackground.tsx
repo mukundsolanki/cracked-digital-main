@@ -21,13 +21,13 @@ interface AnimatedBackgroundProps {
   speed?: number;
 }
 
-export default function AnimatedBackground({ 
-  className = '', 
+export default function AnimatedBackground({
+  className = '',
   particleCount = 50,
-  speed = 0.5 
+  speed = 0.5,
 }: AnimatedBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const particlesRef = useRef<Particle[]>([]);
 
   useEffect(() => {
@@ -56,7 +56,10 @@ export default function AnimatedBackground({
           vx: (Math.random() - 0.5) * speed,
           vy: (Math.random() - 0.5) * speed,
           size: Math.random() * 3 + 1,
-          color: animationColors.particles[Math.floor(Math.random() * animationColors.particles.length)],
+          color:
+            animationColors.particles[
+              Math.floor(Math.random() * animationColors.particles.length)
+            ],
           opacity: Math.random() * 0.5 + 0.2,
           life: 0,
           maxLife: Math.random() * 200 + 100,
@@ -107,7 +110,10 @@ export default function AnimatedBackground({
             vx: (Math.random() - 0.5) * speed,
             vy: (Math.random() - 0.5) * speed,
             size: Math.random() * 3 + 1,
-            color: animationColors.particles[Math.floor(Math.random() * animationColors.particles.length)],
+            color:
+              animationColors.particles[
+                Math.floor(Math.random() * animationColors.particles.length)
+              ],
             opacity: Math.random() * 0.5 + 0.2,
             life: 0,
             maxLife: Math.random() * 200 + 100,
@@ -117,14 +123,14 @@ export default function AnimatedBackground({
 
       // Draw connections between nearby particles
       particlesRef.current.forEach((particle, i) => {
-        particlesRef.current.slice(i + 1).forEach((otherParticle) => {
+        particlesRef.current.slice(i + 1).forEach(otherParticle => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 100) {
             ctx.save();
-            ctx.globalAlpha = (100 - distance) / 100 * 0.1;
+            ctx.globalAlpha = ((100 - distance) / 100) * 0.1;
             ctx.strokeStyle = '#3b82f6';
             ctx.lineWidth = 0.5;
             ctx.beginPath();

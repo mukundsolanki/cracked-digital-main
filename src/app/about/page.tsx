@@ -4,7 +4,7 @@ import TeamSection from '@/components/features/about/TeamSection';
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className='min-h-screen bg-black'>
       <AboutHero />
       <AboutSection />
       <TeamSection />
