@@ -98,10 +98,11 @@ export default function Footer() {
                   href={social.href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-gray-300 hover:text-white transition-colors flex items-center'
+                  className='text-gray-300 hover:text-white transition-colors flex flex-col md:flex-row items-center justify-center md:space-x-2 px-4 md:px-0'
+                  style={{ minWidth: '48px' }}
                 >
                   {social.icon}
-                  <span className='ml-2'>{social.name}</span>
+                  <span className='hidden md:inline ml-0 md:ml-2'>{social.name}</span>
                 </a>
               ))}
             </div>
