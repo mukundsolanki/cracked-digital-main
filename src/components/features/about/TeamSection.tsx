@@ -148,7 +148,7 @@ export default function TeamSection() {
               vision of empowering developers worldwide.
             </p>
             <a
-              href='/careers'
+              href='mailto:admin@cracked.digital'
               className='inline-flex items-center gap-2 bg-yellow-600 text-black px-8 py-4 rounded-2xl font-semibold hover:bg-yellow-700 transition-all duration-300 hover:scale-105'
             >
               Write us an email
