@@ -1,11 +1,10 @@
-import ContactHero from '@/components/features/contact/ContactHero';
-import ContactForm from '@/components/features/contact/ContactForm';
+import ContactHero, { PartnershipSection } from '@/components/features/contact/ContactHero';
 
 export default function ContactPage() {
   return (
     <main className='min-h-screen bg-black'>
       <ContactHero />
-      <ContactForm />
+      <PartnershipSection />
     </main>
   );
 }

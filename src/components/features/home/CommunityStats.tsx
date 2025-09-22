@@ -5,25 +5,25 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const stats = [
   {
-    number: '10,000+',
+    number: '10+',
     label: 'Active Members',
     description: 'Developers from around the world',
     color: 'blue',
   },
   {
-    number: '500+',
+    number: '10+',
     label: 'Technical Articles',
     description: 'In-depth guides and tutorials',
     color: 'purple',
   },
   {
-    number: '50+',
+    number: '7',
     label: 'Expert Mentors',
     description: 'Industry professionals ready to help',
     color: 'green',
   },
   {
-    number: '1,000+',
+    number: '20+',
     label: 'Projects Completed',
     description: 'Collaborative coding projects',
     color: 'orange',

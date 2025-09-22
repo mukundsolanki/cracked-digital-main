@@ -65,7 +65,7 @@ export default function HeroSection() {
                 className='text-3xl md:text-4xl font-bold text-white mb-2'
                 style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
               >
-                10K+
+                100+
               </div>
               <div
                 className='text-white/60 text-sm'
@@ -79,7 +79,7 @@ export default function HeroSection() {
                 className='text-3xl md:text-4xl font-bold text-white mb-2'
                 style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
               >
-                500+
+                10+
               </div>
               <div
                 className='text-white/60 text-sm'
@@ -93,7 +93,7 @@ export default function HeroSection() {
                 className='text-3xl md:text-4xl font-bold text-white mb-2'
                 style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
               >
-                50+
+                7
               </div>
               <div
                 className='text-white/60 text-sm'

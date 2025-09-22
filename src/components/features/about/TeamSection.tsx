@@ -6,14 +6,14 @@ const teamMembers = [
     avatar: '/teams/Daksh_Kitukale.jpg',
     social: {
       linkedin: 'https://www.linkedin.com/in/daksh-kitukale-824843235/',
-      email: 'daksh@cracked.digital',
+      email: 'dakshkitukale03@gmail.com',
     },
   },
   {
     name: 'Dhiraj Choudhary',
     avatar: '/teams/Dhiraj_profile.jpg',
     social: {
-      email: 'dhiraj@cracked.digital',
+      email: 'dhirajchaudhary757@gmail.com',
     },
   },
   {
@@ -30,16 +30,23 @@ const teamMembers = [
     avatar: '/teams/Mukund_Solanki.png',
     social: {
       linkedin: 'https://www.linkedin.com/in/mukundsolanki/',
-      email: 'mukund@cracked.digital',
+      email: 'mukund.dev665@gmail.com',
     },
   },
-
   {
     name: 'Pratham Yadav',
     avatar: '/teams/pratham_yadav.png',
     social: {
       linkedin: 'https://www.linkedin.com/in/prathamyadavv/',
-      email: 'pratham@cracked.digital',
+      email: 'iiprathamyadav@gmail.com',
+    },
+  },
+  {
+    name: 'Gyaneshwar Choudhary',
+    avatar: '/teams/gyaneshwar_choudhary.jpeg',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/gyaneshwar-choudhary-36619b238/',
+      email: 'gyaneshwarchoudhary637@gmail.com',
     },
   },
 ];

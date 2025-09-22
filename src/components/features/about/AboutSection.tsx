@@ -82,9 +82,6 @@ export default function AboutSection() {
               <p className='relative text-gray-600 leading-relaxed'>
                 {value.description}
               </p>
-
-              {/* Decorative Element */}
-              <div className='absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
             </div>
           ))}
         </div>
