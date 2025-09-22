@@ -3,43 +3,43 @@ import { EnvelopeIcon } from '@heroicons/react/24/outline';
 const teamMembers = [
   {
     name: 'Daksh Kitukale',
-    bio: 'Flair Media Production - Visionary Founder',
     avatar: '/teams/Daksh_Kitukale.jpg',
     social: {
-      linkedin: 'https://linkedin.com/in/daksh-kitukale',
-      twitter: 'https://twitter.com/dakshkitukale',
+      linkedin: 'https://www.linkedin.com/in/daksh-kitukale-824843235/',
       email: 'daksh@cracked.digital',
     },
   },
   {
-    name: 'Dhiraj Chaoudhary',
-    bio: 'Flair Media Production - Adhyaksh',
+    name: 'Dhiraj Choudhary',
     avatar: '/teams/Dhiraj_profile.jpg',
     social: {
-      linkedin: 'https://linkedin.com/in/dhiraj',
-      twitter: 'https://twitter.com/dhiraj',
       email: 'dhiraj@cracked.digital',
     },
   },
   {
     name: 'Deepansh Jain',
-    bio: 'SIH 2024 - Lead',
-    avatar: '/teams/Deepansh_ProfilePhoto.HEIC',
+    avatar: '/teams/DeepanshProfilePhoto.jpg',
     social: {
-      linkedin: 'https://linkedin.com/in/deepansh',
-      twitter: 'https://twitter.com/deepansh',
+      linkedin: 'https://www.linkedin.com/in/deepansh-jain007/',
       email: 'deepansh@cracked.digital',
     },
   },
 
   {
     name: 'Mukund Solanki',
-    bio: 'Flair Media Production - Technical Head',
     avatar: '/teams/Mukund_Solanki.png',
     social: {
-      linkedin: 'https://linkedin.com/in/deepansh',
-      twitter: 'https://twitter.com/deepansh',
-      email: 'deepansh@cracked.digital',
+      linkedin: 'https://www.linkedin.com/in/mukundsolanki/',
+      email: 'mukund@cracked.digital',
+    },
+  },
+
+  {
+    name: 'Pratham Yadav',
+    avatar: '/teams/pratham_yadav.png',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/prathamyadavv/',
+      email: 'pratham@cracked.digital',
     },
   },
 ];
@@ -80,7 +80,6 @@ export default function TeamSection() {
                   alt={member.name}
                   className='w-24 h-24 rounded-full mx-auto object-cover border-4 border-yellow-600/30 group-hover:border-yellow-600 transition-all duration-300'
                 />
-                <div className='absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-yellow-600 rounded-full'></div>
               </div>
 
               {/* Content */}
@@ -88,10 +87,6 @@ export default function TeamSection() {
                 <h3 className='text-xl font-bold text-white mb-2 group-hover:text-yellow-600 transition-colors duration-300'>
                   {member.name}
                 </h3>
-
-                <p className='text-gray-300 text-sm leading-relaxed mb-6'>
-                  {member.bio}
-                </p>
 
                 {/* Social Links */}
                 <div className='flex justify-center space-x-4'>
@@ -109,19 +104,6 @@ export default function TeamSection() {
                     </svg>
                   </a>
                   <a
-                    href={member.social.twitter}
-                    className='w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-600 hover:text-black transition-all duration-300'
-                    aria-label='Twitter'
-                  >
-                    <svg
-                      className='w-4 h-4'
-                      fill='currentColor'
-                      viewBox='0 0 24 24'
-                    >
-                      <path d='M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z' />
-                    </svg>
-                  </a>
-                  <a
                     href={`mailto:${member.social.email}`}
                     className='w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-600 hover:text-black transition-all duration-300'
                     aria-label='Email'
@@ -130,9 +112,6 @@ export default function TeamSection() {
                   </a>
                 </div>
               </div>
-
-              {/* Decorative Element */}
-              <div className='absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
             </div>
           ))}
         </div>
