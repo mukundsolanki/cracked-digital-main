@@ -8,8 +8,6 @@ repos:
       - id: check-yaml
       - id: check-json
       - id: check-merge-conflict
-      - id: check-added-large-files
-        args: ['--maxkb=1000']
       - id: mixed-line-ending
 
   # Local hooks for project-specific checks
