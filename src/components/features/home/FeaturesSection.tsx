@@ -96,10 +96,7 @@ export default function FeaturesSection() {
               <p className='relative text-gray-600 leading-relaxed mb-6'>
                 {feature.description}
               </p>
-
-              {/* Decorative Element */}
-              <div className='absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
-            </div>
+              </div>
           ))}
         </div>
       </div>
