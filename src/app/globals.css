@@ -269,6 +269,9 @@ body {
 @media (max-width: 768px) {
   .glass-nav-container {
     top: 0.5rem;
+    left: 0.5rem;
+    right: auto;
+    transform: none;
     padding: 0 0.5rem;
   }
 
