@@ -15,13 +15,6 @@ repos:
   # Local hooks for project-specific checks
   - repo: local
     hooks:
-      - id: prettier
-        name: Prettier
-        entry: npx prettier --write
-        language: system
-        files: \.(js|jsx|ts|tsx|json|css|scss|md|yml|yaml)$
-        pass_filenames: true
-
       - id: typescript-check
         name: TypeScript Check
         entry: npx tsc --noEmit
