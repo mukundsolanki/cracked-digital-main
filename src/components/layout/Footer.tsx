@@ -50,16 +50,8 @@ export default function Footer() {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {/* Brand Section */}
           <div className='lg:col-span-2'>
-            <div className='flex items-center mb-6'>
-              <div
-                className='w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center'
-                style={{
-                  background: `linear-gradient(135deg, ${colors.primary[600]}, ${colors.secondary[600]})`,
-                }}
-              >
-                <span className='text-white font-bold text-xl'>C</span>
-              </div>
-              <span className='ml-3 text-2xl font-bold'>CRACKED</span>
+            <div className='mb-6'>
+              <span className='text-2xl font-bold'>CRACKED</span>
             </div>
 
             <p className='text-gray-300 mb-6 max-w-md leading-relaxed'>
