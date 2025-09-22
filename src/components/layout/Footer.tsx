@@ -1,5 +1,4 @@
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
-import { colors } from '@/lib/colors';
 
 const footerLinks = {
   social: [

@@ -1,4 +1,5 @@
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const teamMembers = [
   {
@@ -82,7 +83,7 @@ export default function TeamSection() {
             >
               {/* Avatar */}
               <div className='relative mb-6'>
-                <img
+                <Image
                   src={member.avatar}
                   alt={member.name}
                   className='w-24 h-24 rounded-full mx-auto object-cover border-4 border-yellow-600/30 group-hover:border-yellow-600 transition-all duration-300'
