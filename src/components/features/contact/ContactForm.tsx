@@ -61,7 +61,7 @@ export default function ContactForm() {
             Send Us a Message
           </h2>
           <p className='text-xl text-gray-600 max-w-2xl mx-auto'>
-            Have a question or need assistance? Fill out the form below and we'll get back to you as soon as possible.
+            Have a question or need assistance? Fill out the form below and we&apos;ll get back to you as soon as possible.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function ContactForm() {
                 Message Sent Successfully!
               </h3>
               <p className='text-gray-600'>
-                Thank you for reaching out. We'll get back to you within 24 hours.
+                Thank you for reaching out. We&apos;ll get back to you within 24 hours.
               </p>
             </div>
           ) : (
@@ -180,8 +180,6 @@ export default function ContactForm() {
             </form>
           )}
         </div>
-
-
       </div>
     </section>
   );

@@ -62,7 +62,7 @@ export default function ContactHero() {
             <span className='text-yellow-600'> Us</span>
           </h1>
           <p className='text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed'>
-            Have questions or need help? We're here to assist you. Reach out to us and we'll get back to you as soon as possible.
+            Have questions or need help? We&apos;re here to assist you. Reach out to us and we&apos;ll get back to you as soon as possible.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export default function ContactHero() {
                 Message Sent Successfully!
               </h3>
               <p className='text-gray-600'>
-                Thank you for reaching out. We'll get back to you within 24 hours.
+                Thank you for reaching out. We&apos;ll get back to you within 24 hours.
               </p>
             </div>
           ) : (
@@ -205,7 +205,7 @@ export function PartnershipSection() {
             <span className='text-yellow-600'> CRACKED</span>
           </h2>
           <p className='text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed'>
-            At CRACKED, we're more than just a community — we're a movement of developers, hackers, and innovators who are shaping the future of technology together.
+            At CRACKED, we&apos;re more than just a community — we&apos;re a movement of developers, hackers, and innovators who are shaping the future of technology together.
           </p>
         </div>
 

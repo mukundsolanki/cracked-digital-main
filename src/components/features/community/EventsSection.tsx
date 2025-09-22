@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import EventCard from './EventCard';
 
 const events = [
