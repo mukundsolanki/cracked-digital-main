@@ -53,50 +53,40 @@ const events = [
 
 export default function EventsSection() {
   return (
-    <section className='relative min-h-screen py-20 px-4 bg-black overflow-hidden'>
-      {/* Blackhole Background Image */}
-      <div className='absolute inset-0'>
-        <Image
-          src='/blackhole.jpeg'
-          alt='Blackhole Background'
-          fill
-          className='object-cover opacity-60'
-          priority
-        />
+    <section className='py-24 bg-white relative overflow-hidden'>
+      {/* Background Elements */}
+      <div className='absolute inset-0 opacity-5'>
+        <div className='absolute top-20 left-20 w-64 h-64 bg-yellow-200 rounded-full blur-3xl'></div>
+        <div className='absolute bottom-20 right-20 w-80 h-80 bg-black rounded-full blur-3xl'></div>
       </div>
 
-      {/* Dark Overlay */}
-      <div className='absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80'></div>
-      <div className='absolute inset-0 backdrop-blur-[3px] pointer-events-none'></div>
-
-      <div className='relative z-10 max-w-7xl mx-auto'>
-        <div className='text-center mb-16'>
-          <h2 className='text-4xl md:text-5xl font-bold text-white mb-4'>
-            Events
+      <div className='relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20'>
+        {/* Section Header */}
+        <div className='mb-20'>
+          <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 text-left'>
+            Community
+            <span className='text-yellow-600'> Events</span>
           </h2>
-          <p className='text-xl text-white/70 max-w-2xl mx-auto'>
+          <p className='text-xl md:text-2xl text-gray-600 leading-relaxed text-left'>
             Join our community events and level up your skills with hands-on
-            workshops, hackathons, and networking opportunities.
+            workshops, hackathons, and networking opportunities. Connect with
+            like-minded developers and accelerate your growth in the tech
+            industry.
           </p>
         </div>
 
-        <div className='mb-12'>
-          <h3 className='text-2xl md:text-3xl font-bold text-white mb-8 text-center'>
-            Upcoming Events
-          </h3>
-
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-            {events.map((event, index) => (
-              <EventCard
-                key={index}
-                date={event.date}
-                title={event.title}
-                description={event.description}
-                highlights={event.highlights}
-                emoji={event.emoji}
-              />
-            ))}
-          </div>
+        {/* Events Grid */}
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+          {events.map((event, index) => (
+            <EventCard
+              key={index}
+              date={event.date}
+              title={event.title}
+              description={event.description}
+              highlights={event.highlights}
+              emoji={event.emoji}
+            />
+          ))}
         </div>
       </div>
     </section>
