@@ -59,7 +59,7 @@ export default function HeroSection() {
           animation: blink 1s infinite;
         }
       `}</style>
-      <section className='relative min-h-screen bg-white flex items-end pb-20 overflow-hidden'>
+      <section className='relative min-h-screen bg-white flex items-center justify-center md:items-end md:justify-start pb-20 overflow-hidden'>
       {/* Subtle Grid Background */}
       <div className='absolute inset-0 opacity-30'>
         <div
@@ -88,8 +88,8 @@ export default function HeroSection() {
       {/* Scrolling Code Snippet */}
       <ScrollingCodeSnippet />
 
-      <div className='relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-16 sm:pt-24 md:pt-32'>
-        <div className='text-center md:text-left'>
+      <div className='relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 md:pt-16 sm:pt-24 md:pt-32'>
+        <div className='flex flex-col items-center md:items-start'>
           {/* Main Heading */}
            <div
              className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-6 md:mb-8 font-light transition-all duration-300'
