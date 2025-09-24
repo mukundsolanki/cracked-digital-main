@@ -86,6 +86,8 @@ export default function TeamSection() {
                 <Image
                   src={member.avatar}
                   alt={member.name}
+                  width={96}
+                  height={96}
                   className='w-24 h-24 rounded-full mx-auto object-cover border-4 border-yellow-600/30 group-hover:border-yellow-600 transition-all duration-300'
                 />
               </div>

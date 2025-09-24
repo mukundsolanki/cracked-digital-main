@@ -823,12 +823,11 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #3b82f6, #a855f7);
-  border-radius: 4px;
+  background: #27272777;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #2563eb, #9333ea);
+  background: #272727ba;
 }
 
 /* Enhanced animations */

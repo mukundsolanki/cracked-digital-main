@@ -1,157 +1,166 @@
-import Image from 'next/image';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { FiArrowUpRight } from 'react-icons/fi';
+import { FaLinkedin, FaDiscord, FaInstagram } from 'react-icons/fa';
+import ScrollingCodeSnippet from './ScrollingCodeSnippet';
 
 export default function HeroSection() {
+  const tags = [
+    'Devs',
+    'Students',
+    'Founders',
+    'Entrepreneurs',
+    'Hackers',
+    'Designers',
+    'Open-Source Enthusiasts',
+    'Builders',
+    'Innovators',
+  ];
+
+  const [index, setIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+
+  useEffect(() => {
+    const currentTag = tags[index];
+    let currentIndex = 0;
+
+    // Clear text first
+    setDisplayText('');
+
+    // Type out the current tag
+    const typeInterval = setInterval(() => {
+      if (currentIndex < currentTag.length) {
+        setDisplayText(currentTag.slice(0, currentIndex + 1));
+        currentIndex++;
+      } else {
+        clearInterval(typeInterval);
+
+        setTimeout(() => {
+          setIndex(prev => (prev + 1) % tags.length);
+        }, 2000);
+      }
+    }, 100); // Typing speed: 100ms per character
+
+    return () => {
+      clearInterval(typeInterval);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index]);
+
   return (
-    <section className='relative min-h-screen flex items-center justify-center bg-black overflow-hidden'>
-      {/* Background Image */}
-      <div className='absolute inset-0'>
-        <Image
-          src='/hero-background.jpg'
-          alt='CRACKED Community Background'
-          fill
-          className='object-cover opacity-90'
-          priority
+    <>
+      <style jsx>{`
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+        .typing-cursor {
+          animation: blink 1s infinite;
+        }
+      `}</style>
+      <section className='relative min-h-screen bg-white flex items-end pb-20 overflow-hidden'>
+      {/* Subtle Grid Background */}
+      <div className='absolute inset-0 opacity-30'>
+        <div
+          className='w-full h-full'
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px',
+          }}
         />
       </div>
 
-      {/* Dark Overlay */}
-      <div className='absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/50'></div>
-
-      {/* Subtle Blur Overlay */}
-      <div className='absolute inset-0 backdrop-blur-[3px] pointer-events-none'></div>
-
-      {/* Fade transition overlay */}
-      <div className='absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-20'></div>
-
-      <div className='relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20'>
-        <div className='text-center'>
-          {/* Badge */}
-          <div className='inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8 mt-16'>
-            <div className='w-2 h-2 bg-green-400 rounded-full'></div>
-            <span className='text-sm font-medium text-white/90'>
-              Join and collaborate with developers worldwide
-            </span>
+      {/* Binary Code */}
+      <div className='absolute top-25 left-20 opacity-15 hidden md:block'>
+        <div className='text-black font-mono text-sm leading-relaxed'>
+          <div>01001000 01100101 01101100 01101100 01101111</div>
+          <div>01010111 01101111 01110010 01101100 01100100</div>
+          <div>
+            01000011 01110010 01100001 01100011 01101011 01100101 01100100
           </div>
+        </div>
+      </div>
 
+      {/* Scrolling Code Snippet */}
+      <ScrollingCodeSnippet />
+
+      <div className='relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-16 sm:pt-24 md:pt-32'>
+        <div className='text-center md:text-left'>
           {/* Main Heading */}
-          <div className='mb-8'>
-            <div
-              className='text-sm md:text-base text-white/70 mb-4 tracking-widest uppercase'
-              style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
-            >
-              Welcome to
-            </div>
-            <h1
-              className='text-6xl md:text-7xl lg:text-8xl font-light leading-tight text-white'
-              style={{ fontFamily: 'RelationshipMelodrame, serif' }}
-            >
-              CRACKED
-            </h1>
-          </div>
+           <div
+             className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-6 md:mb-8 font-light transition-all duration-300'
+             style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
+           >
+             Welcome{' '}
+             <span className='text-yellow-500 font-medium transition-opacity duration-500 ease-in-out'>
+               {'{'}
+               {displayText}
+               <span className='inline-block w-0.5 bg-yellow-500 ml-1 typing-cursor' style={{ height: '1em', verticalAlign: 'text-bottom', transform: 'translateY(-2px)' }}></span>
+               {'}'}
+             </span>{' '}
+             to
+           </div>
 
-          {/* Subheading */}
-          <p
-            className='text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed font-light'
-            style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
+          <h1
+            className='text-6xl sm:text-7xl md:text-9xl lg:text-[10rem] xl:text-[13rem] 2xl:text-[16rem] font-light leading-none text-black relative inline-block'
+            style={{ fontFamily: 'RelationshipMelodrame, serif' }}
           >
-            The ultimate destination for technical excellence, community
-            support, and career growth.
-          </p>
+            <span className='relative z-10'>CRACKED</span>
+            <div className='absolute inset-0 bg-yellow-300/45 -z-10 rounded-s'></div>
+          </h1>
 
-
-
-          {/* Stats */}
-          <div className='grid grid-cols-3 gap-8 max-w-2xl mx-auto'>
-            <div className='text-center'>
-              <div
-                className='text-3xl md:text-4xl font-bold text-white mb-2'
-                style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
-              >
-                100+
-              </div>
-              <div
-                className='text-white/60 text-sm'
-                style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
-              >
-                Active Members
-              </div>
-            </div>
-            <div className='text-center'>
-              <div
-                className='text-3xl md:text-4xl font-bold text-white mb-2'
-                style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
-              >
-                10+
-              </div>
-              <div
-                className='text-white/60 text-sm'
-                style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
-              >
-                Articles
-              </div>
-            </div>
-            <div className='text-center'>
-              <div
-                className='text-3xl md:text-4xl font-bold text-white mb-2'
-                style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
-              >
-                7
-              </div>
-              <div
-                className='text-white/60 text-sm'
-                style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
-              >
-                Mentors
-              </div>
-            </div>
-          </div>
-
-          {/* Join Community Button */}
-          <div className='mt-12 mb-8'>
+          {/* Join Community Text */}
+          <div className='mt-6 sm:mt-8'>
             <a
               href='https://chat.whatsapp.com/GUzd9aSDewzIb3hL458Cz3?mode=ems_copy_t'
               target='_blank'
               rel='noopener noreferrer'
-              className='group relative inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white font-medium transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-white/10'
-              style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
+              className='group inline-flex items-center justify-center md:justify-start gap-2 sm:gap-3 transition-all duration-300 hover:gap-3 sm:hover:gap-4'
             >
-              {/* Shiny effect */}
-              <div className='absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300'></div>
-
-              {/* Button Content */}
-              <div className='relative z-10 flex items-center gap-3'>
-                {/* WhatsApp Icon */}
-                <svg
-                  className='w-5 h-5'
-                  fill='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488'/>
-                </svg>
-
-                <span>Join Community</span>
-
-                {/* Arrow Icon */}
-                <svg
-                  className='w-4 h-4 group-hover:translate-x-1 transition-transform duration-300'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M17 8l4 4m0 0l-4 4m4-4H3'
-                  />
-                </svg>
-              </div>
+              <span
+                className='text-lg sm:text-xl md:text-2xl lg:text-3xl text-black font-light underline decoration-dotted underline-offset-4 sm:underline-offset-6 md:underline-offset-8 transition-all duration-300'
+                style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
+              >
+                Join our community today
+              </span>
+              <FiArrowUpRight className='w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-black transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1' />
             </a>
           </div>
 
-
+          {/* Social Media Icons */}
+          <div className='mt-6 sm:mt-8 flex justify-center md:justify-start gap-4 sm:gap-6'>
+            <a
+              href='https://linkedin.com/company/cracked-community'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
+            >
+              <FaLinkedin className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
+            </a>
+            <a
+              href='https://discord.gg/cracked-community'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
+            >
+              <FaDiscord className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
+            </a>
+            <a
+              href='https://instagram.com/cracked.community'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
+            >
+              <FaInstagram className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
+            </a>
+          </div>
         </div>
       </div>
     </section>
+    </>
   );
 }
