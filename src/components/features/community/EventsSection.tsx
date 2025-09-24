@@ -12,6 +12,7 @@ const events = [
       'Networking strategies',
     ],
     emoji: '📅',
+    registrationUrl: 'https://luma.com/event/evt-cHBtbFCQHNN2brM',
   },
   {
     date: '4th October',
@@ -84,6 +85,7 @@ export default function EventsSection() {
               description={event.description}
               highlights={event.highlights}
               emoji={event.emoji}
+              registrationUrl={event.registrationUrl}
             />
           ))}
         </div>
