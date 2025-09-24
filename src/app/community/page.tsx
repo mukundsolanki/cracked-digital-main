@@ -23,7 +23,7 @@ export default function CommunityPage() {
               width='600'
               height='450'
               frameBorder='1'
-              style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
+              style={{ border: '1px solid #bfcbda88', borderRadius: '14px' }}
               allow='fullscreen; payment'
               aria-hidden='false'
               tabIndex={0}
