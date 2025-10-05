@@ -43,7 +43,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className='bg-black text-white'>
+    <footer className='bg-black dark:bg-gray-900 text-white'>
       {/* Main Footer Content */}
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -53,7 +53,7 @@ export default function Footer() {
               <span className='text-2xl font-bold'>CRACKED</span>
             </div>
 
-            <p className='text-gray-300 mb-6 max-w-md leading-relaxed'>
+            <p className='text-gray-300 dark:text-gray-400 mb-6 max-w-md leading-relaxed'>
               The ultimate destination for technical knowledge, community
               support, and professional growth. Join thousands of developers
               advancing their careers.
@@ -61,7 +61,7 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div className='space-y-3'>
-              <div className='flex items-center text-gray-300'>
+              <div className='flex items-center text-gray-300 dark:text-gray-400'>
                 <EnvelopeIcon className='w-5 h-5 mr-3 text-blue-400' />
                 <a
                   href='mailto:admin@cracked.digital'
@@ -71,7 +71,7 @@ export default function Footer() {
                 </a>
               </div>
 
-              <div className='flex items-center text-gray-300'>
+              <div className='flex items-center text-gray-300 dark:text-gray-400'>
                 <MapPinIcon className='w-5 h-5 mr-3 text-blue-400' />
                 <span>India</span>
               </div>
@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
 
         {/* Social Links */}
-        <div className='border-t border-gray-800 mt-12 pt-8'>
+        <div className='border-t border-gray-800 dark:border-gray-700 mt-12 pt-8'>
           <div className='flex flex-col md:flex-row justify-between items-center'>
             <div className='flex space-x-6 mb-4 md:mb-0'>
               {footerLinks.social.map(social => (
@@ -89,7 +89,7 @@ export default function Footer() {
                   href={social.href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-gray-300 hover:text-white transition-colors flex flex-col md:flex-row items-center justify-center md:space-x-2 px-4 md:px-0'
+                  className='text-gray-300 dark:text-gray-400 hover:text-white transition-colors flex flex-col md:flex-row items-center justify-center md:space-x-2 px-4 md:px-0'
                   style={{ minWidth: '48px' }}
                 >
                   {social.icon}
@@ -98,7 +98,7 @@ export default function Footer() {
               ))}
             </div>
 
-            <div className='text-gray-400 text-sm'>
+            <div className='text-gray-400 dark:text-gray-500 text-sm'>
               Made with ❤️ by the cracked community
             </div>
           </div>

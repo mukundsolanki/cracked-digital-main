@@ -5,7 +5,7 @@ import FAQSection from '@/components/features/home/FAQSection';
 
 export default function Home() {
   return (
-    <main className='min-h-screen bg-black'>
+    <main className='min-h-screen bg-white dark:bg-gray-900'>
       <HeroSection />
       <FeaturesSection />
       <CommunityStats />

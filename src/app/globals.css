@@ -123,8 +123,9 @@
 }
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  /* Light theme (default) */
+  --background: #ffffff;
+  --foreground: #171717;
 
   /* CRACKED Brand Colors */
   --color-primary: #3b82f6;
@@ -133,10 +134,20 @@
   --color-accent-orange: #f97316;
   --color-accent-pink: #ec4899;
   --color-accent-indigo: #6366f1;
-  --color-background: #000000;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #d1d5db;
-  --color-border: #374151;
+  --color-background: #ffffff;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-border: #e2e8f0;
+  
+  /* Additional theme variables */
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f8fafc;
+  --color-surface-tertiary: #f1f5f9;
+  --color-text-tertiary: #64748b;
+  --color-text-muted: #94a3b8;
+  --color-border-light: #e2e8f0;
+  --color-border-medium: #cbd5e1;
+  --color-border-dark: #94a3b8;
 }
 
 @theme inline {
@@ -147,14 +158,45 @@
   --font-display: 'CreatoDisplay', var(--font-geist-sans);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --foreground: #171717;
-    --color-background: #ffffff;
-    --color-text-primary: #0f172a;
-    --color-text-secondary: #475569;
-    --color-border: #e2e8f0;
+/* Dark theme */
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --color-background: #0f172a;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-border: #334155;
+  
+  /* Additional dark theme variables */
+  --color-surface: #1e293b;
+  --color-surface-secondary: #334155;
+  --color-surface-tertiary: #475569;
+  --color-text-tertiary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-border-light: #334155;
+  --color-border-medium: #475569;
+  --color-border-dark: #64748b;
+}
+
+/* System preference fallback */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --color-background: #0f172a;
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #cbd5e1;
+    --color-border: #334155;
+    
+    /* Additional dark theme variables */
+    --color-surface: #1e293b;
+    --color-surface-secondary: #334155;
+    --color-surface-tertiary: #475569;
+    --color-text-tertiary: #94a3b8;
+    --color-text-muted: #64748b;
+    --color-border-light: #334155;
+    --color-border-medium: #475569;
+    --color-border-dark: #64748b;
   }
 }
 
@@ -167,6 +209,12 @@ body {
   color: var(--foreground);
   font-family:
     'CreatoDisplay', var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme transition utilities */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Liquid Glass Navigation Styles */
