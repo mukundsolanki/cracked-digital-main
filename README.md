@@ -65,4 +65,4 @@ This app is optimized for deployment on Vercel.
 4. Open a pull request.
 
 ### License
-No license has been specified for this repository.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
