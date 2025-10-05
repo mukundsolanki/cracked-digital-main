@@ -59,7 +59,7 @@ export default function HeroSection() {
           animation: blink 1s infinite;
         }
       `}</style>
-      <section className='relative min-h-screen bg-white flex items-center justify-center md:items-end md:justify-start pb-20 overflow-hidden'>
+      <section className='relative min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center md:items-end md:justify-start pb-20 overflow-hidden'>
       {/* Subtle Grid Background */}
       <div className='absolute inset-0 opacity-30'>
         <div
@@ -76,7 +76,7 @@ export default function HeroSection() {
 
       {/* Binary Code */}
       <div className='absolute top-25 left-20 opacity-15 hidden md:block'>
-        <div className='text-black font-mono text-sm leading-relaxed'>
+        <div className='text-black dark:text-white font-mono text-sm leading-relaxed'>
           <div>01001000 01100101 01101100 01101100 01101111</div>
           <div>01010111 01101111 01110010 01101100 01100100</div>
           <div>
@@ -92,7 +92,7 @@ export default function HeroSection() {
         <div className='flex flex-col items-center md:items-start'>
           {/* Main Heading */}
            <div
-             className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-6 md:mb-8 font-light transition-all duration-300'
+             className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black dark:text-white mb-4 sm:mb-6 md:mb-8 font-light transition-all duration-300'
              style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
            >
              Welcome{' '}
@@ -106,11 +106,11 @@ export default function HeroSection() {
            </div>
 
           <h1
-            className='text-6xl sm:text-7xl md:text-9xl lg:text-[10rem] xl:text-[13rem] 2xl:text-[16rem] font-light leading-none text-black relative inline-block'
+            className='text-6xl sm:text-7xl md:text-9xl lg:text-[10rem] xl:text-[13rem] 2xl:text-[16rem] font-light leading-none text-black dark:text-white relative inline-block'
             style={{ fontFamily: 'RelationshipMelodrame, serif' }}
           >
             <span className='relative z-10'>CRACKED</span>
-            <div className='absolute inset-0 bg-yellow-300/45 -z-10 rounded-s'></div>
+            <div className='absolute inset-0 bg-yellow-300/45 dark:bg-yellow-400/45 -z-10 rounded-s'></div>
           </h1>
 
           {/* Join Community Text */}
@@ -122,12 +122,12 @@ export default function HeroSection() {
               className='group inline-flex items-center justify-center md:justify-start gap-2 sm:gap-3 transition-all duration-300 hover:gap-3 sm:hover:gap-4'
             >
               <span
-                className='text-lg sm:text-xl md:text-2xl lg:text-3xl text-black font-light underline decoration-dotted underline-offset-4 sm:underline-offset-6 md:underline-offset-8 transition-all duration-300'
+                className='text-lg sm:text-xl md:text-2xl lg:text-3xl text-black dark:text-white font-light underline decoration-dotted underline-offset-4 sm:underline-offset-6 md:underline-offset-8 transition-all duration-300'
                 style={{ fontFamily: 'CreatoDisplay, sans-serif' }}
               >
                 Join our community today
               </span>
-              <FiArrowUpRight className='w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-black transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1' />
+              <FiArrowUpRight className='w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-black dark:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1' />
             </a>
           </div>
 
@@ -137,25 +137,25 @@ export default function HeroSection() {
               href='https://linkedin.com/company/cracked-community'
               target='_blank'
               rel='noopener noreferrer'
-              className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
+              className='group p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-black dark:hover:bg-gray-700 transition-all duration-300 hover:scale-110'
             >
-              <FaLinkedin className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
+              <FaLinkedin className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-400 group-hover:text-white transition-colors duration-300' />
             </a>
             <a
               href='https://discord.gg/cracked-community'
               target='_blank'
               rel='noopener noreferrer'
-              className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
+              className='group p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-black dark:hover:bg-gray-700 transition-all duration-300 hover:scale-110'
             >
-              <FaDiscord className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
+              <FaDiscord className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-400 group-hover:text-white transition-colors duration-300' />
             </a>
             <a
               href='https://instagram.com/cracked.community'
               target='_blank'
               rel='noopener noreferrer'
-              className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
+              className='group p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-black dark:hover:bg-gray-700 transition-all duration-300 hover:scale-110'
             >
-              <FaInstagram className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
+              <FaInstagram className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-400 group-hover:text-white transition-colors duration-300' />
             </a>
           </div>
         </div>

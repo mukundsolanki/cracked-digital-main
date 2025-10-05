@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import MaskTransition from '@/components/ui/MaskTransition';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -47,6 +49,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script id='theme-init' strategy='beforeInteractive'>
+          {`
+            try {
+              const saved = localStorage.getItem('theme');
+              const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+              const theme = saved || system;
+              const root = document.documentElement;
+              root.classList.remove('light', 'dark');
+              root.classList.add(theme);
+              root.setAttribute('data-theme', theme);
+            } catch {}
+          `}
+        </Script>
         {/* SVG Filter for Glass Distortion */}
         <svg style={{ display: 'none' }}>
           <filter id='glass-distortion'>
@@ -60,11 +75,13 @@ export default function RootLayout({
           </filter>
         </svg>
 
-        <MaskTransition maskType='jagged-mask' delay={200} duration={2000}>
-          <Header />
-          {children}
-          <Footer />
-        </MaskTransition>
+        <ThemeProvider>
+          <MaskTransition maskType='jagged-mask' delay={200} duration={2000}>
+            <Header />
+            {children}
+            <Footer />
+          </MaskTransition>
+        </ThemeProvider>
       </body>
     </html>
   );
