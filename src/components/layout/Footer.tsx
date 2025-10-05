@@ -43,17 +43,31 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className='bg-black text-white'>
+    <footer 
+      className='transition-colors duration-300'
+      style={{ 
+        backgroundColor: 'var(--color-background-secondary)',
+        color: 'var(--color-text-primary)'
+      }}
+    >
       {/* Main Footer Content */}
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {/* Brand Section */}
           <div className='lg:col-span-2'>
             <div className='mb-6'>
-              <span className='text-2xl font-bold'>CRACKED</span>
+              <span 
+                className='text-2xl font-bold transition-colors duration-300'
+                style={{ color: 'var(--color-text-primary)' }}
+              >
+                CRACKED
+              </span>
             </div>
 
-            <p className='text-gray-300 mb-6 max-w-md leading-relaxed'>
+            <p 
+              className='mb-6 max-w-md leading-relaxed transition-colors duration-300'
+              style={{ color: 'var(--color-text-secondary)' }}
+            >
               The ultimate destination for technical knowledge, community
               support, and professional growth. Join thousands of developers
               advancing their careers.
@@ -61,17 +75,24 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div className='space-y-3'>
-              <div className='flex items-center text-gray-300'>
+              <div 
+                className='flex items-center transition-colors duration-300'
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
                 <EnvelopeIcon className='w-5 h-5 mr-3 text-blue-400' />
                 <a
                   href='mailto:admin@cracked.digital'
-                  className='hover:text-white transition-colors'
+                  className='hover:opacity-80 transition-colors duration-300'
+                  style={{ color: 'var(--color-text-secondary)' }}
                 >
                   admin@cracked.digital
                 </a>
               </div>
 
-              <div className='flex items-center text-gray-300'>
+              <div 
+                className='flex items-center transition-colors duration-300'
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
                 <MapPinIcon className='w-5 h-5 mr-3 text-blue-400' />
                 <span>India</span>
               </div>
@@ -80,7 +101,10 @@ export default function Footer() {
         </div>
 
         {/* Social Links */}
-        <div className='border-t border-gray-800 mt-12 pt-8'>
+        <div 
+          className='border-t mt-12 pt-8 transition-colors duration-300'
+          style={{ borderColor: 'var(--color-border)' }}
+        >
           <div className='flex flex-col md:flex-row justify-between items-center'>
             <div className='flex space-x-6 mb-4 md:mb-0'>
               {footerLinks.social.map(social => (
@@ -89,8 +113,11 @@ export default function Footer() {
                   href={social.href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-gray-300 hover:text-white transition-colors flex flex-col md:flex-row items-center justify-center md:space-x-2 px-4 md:px-0'
-                  style={{ minWidth: '48px' }}
+                  className='transition-colors duration-300 flex flex-col md:flex-row items-center justify-center md:space-x-2 px-4 md:px-0 hover:opacity-80'
+                  style={{ 
+                    minWidth: '48px',
+                    color: 'var(--color-text-secondary)'
+                  }}
                 >
                   {social.icon}
                   <span className='hidden md:inline ml-0 md:ml-2'>{social.name}</span>
@@ -98,7 +125,10 @@ export default function Footer() {
               ))}
             </div>
 
-            <div className='text-gray-400 text-sm'>
+            <div 
+              className='text-sm transition-colors duration-300'
+              style={{ color: 'var(--color-text-tertiary)' }}
+            >
               Made with ❤️ by the cracked community
             </div>
           </div>

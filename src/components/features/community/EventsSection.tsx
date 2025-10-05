@@ -53,7 +53,10 @@ const events = [
 
 export default function EventsSection() {
   return (
-    <section className='py-24 bg-white relative overflow-hidden'>
+    <section 
+      className='py-24 relative overflow-hidden transition-colors duration-300'
+      style={{ backgroundColor: 'var(--color-background)' }}
+    >
       {/* Background Elements */}
       <div className='absolute inset-0 opacity-5'>
         <div className='absolute top-20 left-20 w-64 h-64 bg-yellow-200 rounded-full blur-3xl'></div>
@@ -63,11 +66,17 @@ export default function EventsSection() {
       <div className='relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20'>
         {/* Section Header */}
         <div className='mb-20'>
-          <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 text-left'>
+          <h2 
+            className='text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-left transition-colors duration-300'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             Community
             <span className='text-yellow-600'> Events</span>
           </h2>
-          <p className='text-xl md:text-2xl text-gray-600 leading-relaxed text-left'>
+          <p 
+            className='text-xl md:text-2xl leading-relaxed text-left transition-colors duration-300'
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
             Join our community events and level up your skills with hands-on
             workshops, hackathons, and networking opportunities. Connect with
             like-minded developers and accelerate your growth in the tech

@@ -70,17 +70,24 @@ export default function CommunityStats() {
     <section
       ref={sectionRef}
       id='stats-section'
-      className='py-20 bg-gradient-to-r from-gray-50 to-blue-50'
+      className='py-20 transition-colors duration-300'
+      style={{ backgroundColor: 'var(--color-background-secondary)' }}
     >
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         {/* Section Header */}
         <div
           className={`text-center mb-16 transition-all duration-1000 ${isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+          <h2 
+            className='text-3xl md:text-4xl font-bold mb-4 transition-colors duration-300'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             Our Growing Community
           </h2>
-          <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+          <p 
+            className='text-xl max-w-3xl mx-auto transition-colors duration-300'
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
             Join thousands of developers who are already part of the CRACKED
             community and advancing their careers.
           </p>
@@ -108,12 +115,20 @@ export default function CommunityStats() {
               </div>
 
               {/* Stat Label */}
-              <h3 className='text-xl font-semibold text-gray-900 mb-2'>
+              <h3 
+                className='text-xl font-semibold mb-2 transition-colors duration-300'
+                style={{ color: 'var(--color-text-primary)' }}
+              >
                 {stat.label}
               </h3>
 
               {/* Stat Description */}
-              <p className='text-gray-600'>{stat.description}</p>
+              <p 
+                className='transition-colors duration-300'
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                {stat.description}
+              </p>
             </div>
           ))}
         </div>

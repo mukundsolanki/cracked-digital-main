@@ -47,7 +47,10 @@ export default function ContactForm() {
   };
 
   return (
-    <section className='py-24 bg-gray-50 relative overflow-hidden'>
+    <section 
+      className='py-24 relative overflow-hidden transition-colors duration-300'
+      style={{ backgroundColor: 'var(--color-background-secondary)' }}
+    >
       {/* Background Elements */}
       <div className='absolute inset-0 opacity-5'>
         <div className='absolute top-20 left-20 w-64 h-64 bg-yellow-200 rounded-full blur-3xl'></div>
@@ -57,24 +60,42 @@ export default function ContactForm() {
       <div className='relative z-10 max-w-4xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20'>
         {/* Contact Form */}
         <div className='text-center mb-16'>
-          <h2 className='text-3xl md:text-4xl font-bold text-black mb-4'>
+          <h2 
+            className='text-3xl md:text-4xl font-bold mb-4 transition-colors duration-300'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             Send Us a Message
           </h2>
-          <p className='text-xl text-gray-600 max-w-2xl mx-auto'>
+          <p 
+            className='text-xl max-w-2xl mx-auto transition-colors duration-300'
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
             Have a question or need assistance? Fill out the form below and we&apos;ll get back to you as soon as possible.
           </p>
         </div>
 
-        <div className='bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-200'>
+        <div 
+          className='rounded-3xl p-8 md:p-12 shadow-lg border transition-colors duration-300'
+          style={{ 
+            backgroundColor: 'var(--color-background)',
+            borderColor: 'var(--color-border)'
+          }}
+        >
           {isSubmitted ? (
             <div className='text-center py-12'>
-              <div className='w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6'>
-                <CheckCircleIcon className='w-10 h-10 text-green-600' />
+              <div className='w-20 h-20 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto mb-6'>
+                <CheckCircleIcon className='w-10 h-10 text-green-600 dark:text-green-400' />
               </div>
-              <h3 className='text-2xl font-bold text-gray-900 mb-4'>
+              <h3 
+                className='text-2xl font-bold mb-4 transition-colors duration-300'
+                style={{ color: 'var(--color-text-primary)' }}
+              >
                 Message Sent Successfully!
               </h3>
-              <p className='text-gray-600'>
+              <p 
+                className='transition-colors duration-300'
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
                 Thank you for reaching out. We&apos;ll get back to you within 24 hours.
               </p>
             </div>
@@ -84,7 +105,8 @@ export default function ContactForm() {
                 <div>
                   <label
                     htmlFor='name'
-                    className='block text-sm font-semibold text-gray-700 mb-2'
+                    className='block text-sm font-semibold mb-2 transition-colors duration-300'
+                    style={{ color: 'var(--color-text-primary)' }}
                   >
                     Full Name *
                   </label>
@@ -95,7 +117,12 @@ export default function ContactForm() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300'
+                    className='w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300'
+                    style={{ 
+                      backgroundColor: 'var(--color-background-secondary)',
+                      borderColor: 'var(--color-border)',
+                      color: 'var(--color-text-primary)'
+                    }}
                     placeholder='Enter your full name'
                   />
                 </div>
@@ -103,7 +130,8 @@ export default function ContactForm() {
                 <div>
                   <label
                     htmlFor='email'
-                    className='block text-sm font-semibold text-gray-700 mb-2'
+                    className='block text-sm font-semibold mb-2 transition-colors duration-300'
+                    style={{ color: 'var(--color-text-primary)' }}
                   >
                     Email Address *
                   </label>
@@ -114,7 +142,12 @@ export default function ContactForm() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300'
+                    className='w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300'
+                    style={{ 
+                      backgroundColor: 'var(--color-background-secondary)',
+                      borderColor: 'var(--color-border)',
+                      color: 'var(--color-text-primary)'
+                    }}
                     placeholder='Enter your email address'
                   />
                 </div>
@@ -123,7 +156,8 @@ export default function ContactForm() {
               <div>
                 <label
                   htmlFor='subject'
-                  className='block text-sm font-semibold text-gray-700 mb-2'
+                  className='block text-sm font-semibold mb-2 transition-colors duration-300'
+                  style={{ color: 'var(--color-text-primary)' }}
                 >
                   Subject *
                 </label>
@@ -134,7 +168,12 @@ export default function ContactForm() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300'
+                  className='w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300'
+                  style={{ 
+                    backgroundColor: 'var(--color-background-secondary)',
+                    borderColor: 'var(--color-border)',
+                    color: 'var(--color-text-primary)'
+                  }}
                   placeholder="What's this about?"
                 />
               </div>
@@ -142,7 +181,8 @@ export default function ContactForm() {
               <div>
                 <label
                   htmlFor='message'
-                  className='block text-sm font-semibold text-gray-700 mb-2'
+                  className='block text-sm font-semibold mb-2 transition-colors duration-300'
+                  style={{ color: 'var(--color-text-primary)' }}
                 >
                   Message *
                 </label>
@@ -153,7 +193,12 @@ export default function ContactForm() {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 resize-none'
+                  className='w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 resize-none'
+                  style={{ 
+                    backgroundColor: 'var(--color-background-secondary)',
+                    borderColor: 'var(--color-border)',
+                    color: 'var(--color-text-primary)'
+                  }}
                   placeholder='Tell us more about your inquiry...'
                 />
               </div>

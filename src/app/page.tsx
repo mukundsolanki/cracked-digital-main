@@ -5,7 +5,10 @@ import FAQSection from '@/components/features/home/FAQSection';
 
 export default function Home() {
   return (
-    <main className='min-h-screen bg-black'>
+    <main 
+      className='min-h-screen transition-colors duration-300'
+      style={{ backgroundColor: 'var(--color-background)' }}
+    >
       <HeroSection />
       <FeaturesSection />
       <CommunityStats />

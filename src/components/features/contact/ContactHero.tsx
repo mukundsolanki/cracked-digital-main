@@ -47,7 +47,10 @@ export default function ContactHero() {
   };
 
   return (
-    <section className='py-24 bg-white relative overflow-hidden'>
+    <section 
+      className='py-24 relative overflow-hidden transition-colors duration-300'
+      style={{ backgroundColor: 'var(--color-background)' }}
+    >
       {/* Background Elements */}
       <div className='absolute inset-0 opacity-5'>
         <div className='absolute top-20 left-20 w-64 h-64 bg-yellow-200 rounded-full blur-3xl'></div>
@@ -57,17 +60,30 @@ export default function ContactHero() {
       <div className='relative z-10 max-w-4xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20'>
         {/* Section Header */}
         <div className='text-center mb-16'>
-          <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8'>
+          <h1 
+            className='text-4xl md:text-5xl lg:text-6xl font-bold mb-8 transition-colors duration-300'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             Contact
             <span className='text-yellow-600'> Us</span>
           </h1>
-          <p className='text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed'>
+          <p 
+            className='text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed transition-colors duration-300'
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
             Have questions or need help? We&apos;re here to assist you. Reach out to us and we&apos;ll get back to you as soon as possible.
           </p>
         </div>
 
         {/* Contact Form */}
-        <div id='contact-form' className='bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-200'>
+        <div 
+          id='contact-form' 
+          className='rounded-3xl p-8 md:p-12 shadow-lg border transition-colors duration-300'
+          style={{ 
+            backgroundColor: 'var(--color-background-secondary)',
+            borderColor: 'var(--color-border)'
+          }}
+        >
           {isSubmitted ? (
             <div className='text-center py-12'>
               <div className='w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6'>
@@ -190,7 +206,10 @@ export default function ContactHero() {
 // Partnership Section Component
 export function PartnershipSection() {
   return (
-    <section className='py-24 bg-gray-50 relative overflow-hidden'>
+    <section 
+      className='py-24 relative overflow-hidden transition-colors duration-300'
+      style={{ backgroundColor: 'var(--color-background-secondary)' }}
+    >
       {/* Background Elements */}
       <div className='absolute inset-0 opacity-5'>
         <div className='absolute top-20 left-20 w-64 h-64 bg-yellow-200 rounded-full blur-3xl'></div>
@@ -200,72 +219,129 @@ export function PartnershipSection() {
       <div className='relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20'>
         {/* Section Header */}
         <div className='text-center mb-16'>
-          <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8'>
+          <h2 
+            className='text-4xl md:text-5xl lg:text-6xl font-bold mb-8 transition-colors duration-300'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             Partner With
             <span className='text-yellow-600'> CRACKED</span>
           </h2>
-          <p className='text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed'>
+          <p 
+            className='text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed transition-colors duration-300'
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
             At CRACKED, we&apos;re more than just a community — we&apos;re a movement of developers, hackers, and innovators who are shaping the future of technology together.
           </p>
         </div>
 
         {/* Why Sponsor Us */}
         <div className='mb-16'>
-          <h3 className='text-3xl md:text-4xl font-bold text-black mb-12 text-center'>
+          <h3 
+            className='text-3xl md:text-4xl font-bold mb-12 text-center transition-colors duration-300'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             Why Sponsor Us?
           </h3>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
             {/* Reach the Right Audience */}
-            <div className='group bg-white p-8 rounded-3xl border border-gray-200 hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'>
+            <div 
+              className='group p-8 rounded-3xl border hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'
+              style={{ 
+                backgroundColor: 'var(--color-background)',
+                borderColor: 'var(--color-border)'
+              }}
+            >
               <div className='w-16 h-16 rounded-2xl bg-yellow-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg'>
                 <span className='text-2xl'>🎯</span>
               </div>
-              <h4 className='text-xl font-bold text-black mb-4 group-hover:text-gray-800 transition-colors duration-300'>
+              <h4 
+                className='text-xl font-bold mb-4 transition-colors duration-300'
+                style={{ color: 'var(--color-text-primary)' }}
+              >
                 Reach the Right Audience
               </h4>
-              <p className='text-gray-600 leading-relaxed'>
+              <p 
+                className='leading-relaxed transition-colors duration-300'
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
                 Connect with hundreds of developers, students, cybersecurity enthusiasts, and tech leaders.
               </p>
               <div className='absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
             </div>
 
             {/* Showcase Your Brand */}
-            <div className='group bg-white p-8 rounded-3xl border border-gray-200 hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'>
+            <div 
+              className='group p-8 rounded-3xl border hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'
+              style={{ 
+                backgroundColor: 'var(--color-background)',
+                borderColor: 'var(--color-border)'
+              }}
+            >
               <div className='w-16 h-16 rounded-2xl bg-yellow-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg'>
                 <span className='text-2xl'>🌟</span>
               </div>
-              <h4 className='text-xl font-bold text-black mb-4 group-hover:text-gray-800 transition-colors duration-300'>
+              <h4 
+                className='text-xl font-bold mb-4 transition-colors duration-300'
+                style={{ color: 'var(--color-text-primary)' }}
+              >
                 Showcase Your Brand
               </h4>
-              <p className='text-gray-600 leading-relaxed'>
+              <p 
+                className='leading-relaxed transition-colors duration-300'
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
                 Get featured in our events, workshops, hackathons, and community content.
               </p>
               <div className='absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
             </div>
 
             {/* Build Future Talent */}
-            <div className='group bg-white p-8 rounded-3xl border border-gray-200 hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'>
+            <div 
+              className='group p-8 rounded-3xl border hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'
+              style={{ 
+                backgroundColor: 'var(--color-background)',
+                borderColor: 'var(--color-border)'
+              }}
+            >
               <div className='w-16 h-16 rounded-2xl bg-yellow-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg'>
                 <span className='text-2xl'>🚀</span>
               </div>
-              <h4 className='text-xl font-bold text-black mb-4 group-hover:text-gray-800 transition-colors duration-300'>
+              <h4 
+                className='text-xl font-bold mb-4 transition-colors duration-300'
+                style={{ color: 'var(--color-text-primary)' }}
+              >
                 Build Future Talent
               </h4>
-              <p className='text-gray-600 leading-relaxed'>
+              <p 
+                className='leading-relaxed transition-colors duration-300'
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
                 Support the next generation of developers and security professionals.
               </p>
               <div className='absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
             </div>
 
             {/* Collaborate on Innovation */}
-            <div className='group bg-white p-8 rounded-3xl border border-gray-200 hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'>
+            <div 
+              className='group p-8 rounded-3xl border hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'
+              style={{ 
+                backgroundColor: 'var(--color-background)',
+                borderColor: 'var(--color-border)'
+              }}
+            >
               <div className='w-16 h-16 rounded-2xl bg-yellow-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg'>
                 <span className='text-2xl'>💡</span>
               </div>
-              <h4 className='text-xl font-bold text-black mb-4 group-hover:text-gray-800 transition-colors duration-300'>
+              <h4 
+                className='text-xl font-bold mb-4 transition-colors duration-300'
+                style={{ color: 'var(--color-text-primary)' }}
+              >
                 Collaborate on Innovation
               </h4>
-              <p className='text-gray-600 leading-relaxed'>
+              <p 
+                className='leading-relaxed transition-colors duration-300'
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
                 Work with our community on real-world projects and open-source initiatives.
               </p>
               <div className='absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
@@ -275,10 +351,16 @@ export function PartnershipSection() {
 
         {/* Sponsor Contact */}
         <div className='text-center mt-16'>
-          <h3 className='text-3xl md:text-4xl font-bold text-black mb-8'>
+          <h3 
+            className='text-3xl md:text-4xl font-bold mb-8 transition-colors duration-300'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             Get in Touch
           </h3>
-          <p className='text-xl text-gray-600 mb-8 max-w-3xl mx-auto'>
+          <p 
+            className='text-xl mb-8 max-w-3xl mx-auto transition-colors duration-300'
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
             Want to make an impact with us?
           </p>
           <div className='bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-200 max-w-2xl mx-auto'>

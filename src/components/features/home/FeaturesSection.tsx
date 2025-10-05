@@ -39,7 +39,8 @@ export default function FeaturesSection() {
   return (
     <section
       ref={sectionRef}
-      className='py-24 bg-white relative overflow-hidden'
+      className='py-24 relative overflow-hidden transition-colors duration-300'
+      style={{ backgroundColor: 'var(--color-background)' }}
     >
       {/* Background Elements */}
       <div className='absolute inset-0 opacity-5'>
@@ -53,14 +54,20 @@ export default function FeaturesSection() {
           ref={headerRef}
           className={`mb-20 transition-all duration-1000 ${isHeaderVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 text-left'>
+          <h2 
+            className='text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-left transition-colors duration-300'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             Why Choose{' '}
             <span className='bg-yellow-600 bg-clip-text text-transparent'>
               CRACKED
             </span>
             ?
           </h2>
-          <p className='text-xl md:text-2xl text-gray-600 max-w-4xl leading-relaxed text-left'>
+          <p 
+            className='text-xl md:text-2xl max-w-4xl leading-relaxed text-left transition-colors duration-300'
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
             We provide comprehensive resources, expert guidance, and a
             supportive community to accelerate your technical career and
             personal growth.
@@ -72,10 +79,14 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group relative bg-gray-50 p-8 rounded-3xl border border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden animate-on-scroll ${
+              className={`group relative p-8 rounded-3xl border shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden animate-on-scroll ${
                 isSectionVisible ? 'animated' : ''
               }`}
-              style={{ animationDelay: `${index * 0.2}s` }}
+              style={{ 
+                animationDelay: `${index * 0.2}s`,
+                backgroundColor: 'var(--color-background-secondary)',
+                borderColor: 'var(--color-border)'
+              }}
             >
               {/* Gradient Background on Hover */}
               <div
@@ -90,10 +101,16 @@ export default function FeaturesSection() {
               </div>
 
               {/* Content */}
-              <h3 className='relative text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300'>
+              <h3 
+                className='relative text-2xl font-bold mb-4 transition-colors duration-300'
+                style={{ color: 'var(--color-text-primary)' }}
+              >
                 {feature.title}
               </h3>
-              <p className='relative text-gray-600 leading-relaxed mb-6'>
+              <p 
+                className='relative leading-relaxed mb-6 transition-colors duration-300'
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
                 {feature.description}
               </p>
               </div>

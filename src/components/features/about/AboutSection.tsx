@@ -34,7 +34,10 @@ const values = [
 
 export default function AboutSection() {
   return (
-    <section className='py-24 bg-white relative overflow-hidden'>
+    <section 
+      className='py-24 relative overflow-hidden transition-colors duration-300'
+      style={{ backgroundColor: 'var(--color-background)' }}
+    >
       {/* Background Elements */}
       <div className='absolute inset-0 opacity-5'>
         <div className='absolute top-20 left-20 w-64 h-64 bg-yellow-200 rounded-full blur-3xl'></div>
@@ -44,11 +47,17 @@ export default function AboutSection() {
       <div className='relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20'>
         {/* Section Header - Left Aligned */}
         <div className='mb-20'>
-          <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 text-left'>
+          <h2 
+            className='text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-left transition-colors duration-300'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             Our
             <span className='text-yellow-600'> Story</span>
           </h2>
-          <p className='text-xl md:text-2xl text-gray-600 leading-relaxed text-left'>
+          <p 
+            className='text-xl md:text-2xl leading-relaxed text-left transition-colors duration-300'
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
             Founded with a vision to democratize technical education and create
             a supportive ecosystem for developers worldwide. We empower
             developers of all levels with the knowledge, tools, and community
@@ -68,7 +77,11 @@ export default function AboutSection() {
           {values.map((value, index) => (
             <div
               key={index}
-              className='group relative bg-white p-8 rounded-3xl border border-gray-200 hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'
+              className='group relative p-8 rounded-3xl border hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'
+              style={{ 
+                backgroundColor: 'var(--color-background-secondary)',
+                borderColor: 'var(--color-border)'
+              }}
             >
               {/* Icon */}
               <div className='relative w-16 h-16 rounded-2xl bg-yellow-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg'>
@@ -76,10 +89,16 @@ export default function AboutSection() {
               </div>
 
               {/* Content */}
-              <h3 className='relative text-2xl font-bold text-black mb-4 group-hover:text-gray-800 transition-colors duration-300'>
+              <h3 
+                className='relative text-2xl font-bold mb-4 transition-colors duration-300'
+                style={{ color: 'var(--color-text-primary)' }}
+              >
                 {value.title}
               </h3>
-              <p className='relative text-gray-600 leading-relaxed'>
+              <p 
+                className='relative leading-relaxed transition-colors duration-300'
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
                 {value.description}
               </p>
             </div>

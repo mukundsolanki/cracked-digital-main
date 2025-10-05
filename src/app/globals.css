@@ -123,8 +123,9 @@
 }
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  /* Light theme (default) */
+  --background: #ffffff;
+  --foreground: #171717;
 
   /* CRACKED Brand Colors */
   --color-primary: #3b82f6;
@@ -133,10 +134,27 @@
   --color-accent-orange: #f97316;
   --color-accent-pink: #ec4899;
   --color-accent-indigo: #6366f1;
-  --color-background: #000000;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #d1d5db;
-  --color-border: #374151;
+  
+  /* Light theme colors */
+  --color-background: #ffffff;
+  --color-background-secondary: #f8fafc;
+  --color-background-tertiary: #f1f5f9;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  --color-border: #e2e8f0;
+  --color-border-hover: #cbd5e1;
+  
+  /* Glass effect colors for light theme */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Navigation colors */
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-text: #0f172a;
+  --nav-text-hover: #475569;
+  --nav-border: rgba(226, 232, 240, 0.5);
 }
 
 @theme inline {
@@ -147,14 +165,56 @@
   --font-display: 'CreatoDisplay', var(--font-geist-sans);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --foreground: #171717;
-    --color-background: #ffffff;
-    --color-text-primary: #0f172a;
-    --color-text-secondary: #475569;
-    --color-border: #e2e8f0;
+/* Dark theme */
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  
+  /* Dark theme colors */
+  --color-background: #0f172a;
+  --color-background-secondary: #1e293b;
+  --color-background-tertiary: #334155;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-tertiary: #94a3b8;
+  --color-border: #334155;
+  --color-border-hover: #475569;
+  
+  /* Glass effect colors for dark theme */
+  --glass-bg: rgba(15, 23, 42, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+  
+  /* Navigation colors */
+  --nav-bg: rgba(15, 23, 42, 0.8);
+  --nav-text: #f8fafc;
+  --nav-text-hover: #cbd5e1;
+  --nav-border: rgba(51, 65, 85, 0.5);
+}
+
+/* System preference fallback */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    
+    --color-background: #0f172a;
+    --color-background-secondary: #1e293b;
+    --color-background-tertiary: #334155;
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #cbd5e1;
+    --color-text-tertiary: #94a3b8;
+    --color-border: #334155;
+    --color-border-hover: #475569;
+    
+    --glass-bg: rgba(15, 23, 42, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: rgba(0, 0, 0, 0.3);
+    
+    --nav-bg: rgba(15, 23, 42, 0.8);
+    --nav-text: #f8fafc;
+    --nav-text-hover: #cbd5e1;
+    --nav-border: rgba(51, 65, 85, 0.5);
   }
 }
 
@@ -167,6 +227,22 @@ body {
   color: var(--foreground);
   font-family:
     'CreatoDisplay', var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth theme transitions */
+*,
+*::before,
+*::after {
+  transition: 
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    fill 0.3s ease,
+    stroke 0.3s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 /* Liquid Glass Navigation Styles */
@@ -181,9 +257,9 @@ body {
 }
 
 .glass-nav {
-  --bg-color: rgba(0, 0, 0, 0.25);
-  --highlight: rgba(255, 255, 255, 0.15);
-  --text: #ffffff;
+  --bg-color: var(--glass-bg);
+  --highlight: var(--glass-border);
+  --text: var(--nav-text);
 
   position: relative;
   width: auto;
