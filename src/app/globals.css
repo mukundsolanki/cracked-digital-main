@@ -137,15 +137,13 @@
   --color-text-primary: #ffffff;
   --color-text-secondary: #d1d5db;
   --color-border: #374151;
+
+  /* Theme helper classes */
+  --transition-duration: 250ms;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: 'CreatoDisplay', var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: 'CreatoDisplay', var(--font-geist-sans);
-}
+/* Theme inline helper removed (not supported by standard CSS). Variables are set via
+   :root and explicit html.light / html.dark classes controlled by ThemeProvider. */
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -156,6 +154,80 @@
     --color-text-secondary: #475569;
     --color-border: #e2e8f0;
   }
+}
+
+/* Explicit theme classes applied to <html> by ThemeProvider */
+html.theme-transition,
+html .theme-transition {
+  transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+}
+
+/* Keep dark styles under the Tailwind `dark` class so `dark:` utilities work */
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --color-background: #ffffff;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-border: #e2e8f0;
+}
+
+html.dark {
+  --background: #0b1020;
+  --foreground: #e6eef8;
+  --color-background: #0b1020;
+  --color-text-primary: #e6eef8;
+  --color-text-secondary: #9aa7c0;
+  --color-border: #24324a;
+}
+
+/* Global overrides for common Tailwind utility classes in dark mode.
+   This lets components that use Tailwind color utilities (e.g. bg-white, text-black)
+   automatically adapt when the ThemeProvider toggles the `dark` class on <html>.
+   These use !important to ensure they take precedence over utility classes.
+*/
+html.dark .bg-white {
+  background-color: var(--color-background) !important;
+}
+
+html.dark .bg-white\/95 {
+  /* Tailwind generates class names with escaped slashes; this targets bg-white/95 */
+  background-color: rgba(11, 16, 32, 0.95) !important;
+}
+
+html.dark .text-black {
+  color: var(--color-text-primary) !important;
+}
+
+html.dark .text-gray-600,
+html.dark .text-gray-700,
+html.dark .text-gray-500 {
+  color: var(--color-text-secondary) !important;
+}
+
+html.dark .border-gray-200,
+html.dark .border-gray-300 {
+  border-color: var(--color-border) !important;
+}
+
+html.dark .hover\:text-black:hover {
+  color: var(--color-text-primary) !important;
+}
+
+html.dark .hover\:bg-gray-50:hover,
+html.dark .hover\:bg-gray-100:hover {
+  background-color: rgba(255,255,255,0.02) !important;
+}
+
+html.dark .bg-gray-50 {
+  background-color: rgba(255,255,255,0.02) !important;
+}
+
+/* Buttons and cards that use white backgrounds */
+html.dark .card,
+html.dark .bg-white-card {
+  background-color: rgba(255,255,255,0.03) !important;
+  color: var(--color-text-primary) !important;
 }
 
 html {
