@@ -16,7 +16,13 @@ export default function EventCard({
   registrationUrl,
 }: EventCardProps) {
   return (
-    <div className='group relative bg-white p-8 rounded-3xl border border-gray-200 hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'>
+    <div 
+      className='group relative p-8 rounded-3xl border hover:border-yellow-600 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden'
+      style={{ 
+        backgroundColor: 'var(--color-background-secondary)',
+        borderColor: 'var(--color-border)'
+      }}
+    >
       {/* Header with Icon, Date, and Title */}
       <div className='flex items-start gap-6 mb-6'>
         {/* Icon */}
@@ -27,32 +33,52 @@ export default function EventCard({
         {/* Date and Title */}
         <div className='flex-1 min-w-0'>
           {/* Date */}
-          <div className='text-sm text-gray-500 mb-2'>{date}</div>
+          <div 
+            className='text-sm mb-2 transition-colors duration-300'
+            style={{ color: 'var(--color-text-tertiary)' }}
+          >
+            {date}
+          </div>
 
           {/* Title */}
-          <h3 className='relative text-2xl font-bold text-black group-hover:text-gray-800 transition-colors duration-300 leading-tight'>
+          <h3 
+            className='relative text-2xl font-bold transition-colors duration-300 leading-tight'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             {title}
           </h3>
         </div>
       </div>
 
       {/* Description */}
-      <p className='relative text-gray-600 leading-relaxed mb-4'>
+      <p 
+        className='relative leading-relaxed mb-4 transition-colors duration-300'
+        style={{ color: 'var(--color-text-secondary)' }}
+      >
         {description}
       </p>
 
       {/* Highlights section */}
       <div className='relative'>
-        <div className='text-sm font-semibold text-gray-700 mb-3'>
+        <div 
+          className='text-sm font-semibold mb-3 transition-colors duration-300'
+          style={{ color: 'var(--color-text-primary)' }}
+        >
           Highlights:
         </div>
         <ul className='space-y-2'>
           {highlights.map((highlight, index) => (
             <li
               key={index}
-              className='text-gray-600 text-sm flex items-start gap-2'
+              className='text-sm flex items-start gap-2 transition-colors duration-300'
+              style={{ color: 'var(--color-text-secondary)' }}
             >
-              <span className='text-gray-400 mt-1'>•</span>
+              <span 
+                className='mt-1 transition-colors duration-300'
+                style={{ color: 'var(--color-text-tertiary)' }}
+              >
+                •
+              </span>
               <span>{highlight}</span>
             </li>
           ))}

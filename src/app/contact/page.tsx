@@ -2,7 +2,10 @@ import ContactHero, { PartnershipSection } from '@/components/features/contact/C
 
 export default function ContactPage() {
   return (
-    <main className='min-h-screen bg-black'>
+    <main 
+      className='min-h-screen transition-colors duration-300'
+      style={{ backgroundColor: 'var(--color-background)' }}
+    >
       <ContactHero />
       <PartnershipSection />
     </main>

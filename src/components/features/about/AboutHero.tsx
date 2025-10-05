@@ -13,7 +13,12 @@ export default function AboutHero() {
       </video>
 
       {/* Fade transition overlay */}
-      <div className='absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none'></div>
+      <div 
+        className='absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t pointer-events-none transition-colors duration-300'
+        style={{ 
+          background: `linear-gradient(to top, var(--color-background), transparent)`
+        }}
+      ></div>
     </section>
   );
 }

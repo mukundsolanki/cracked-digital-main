@@ -50,7 +50,10 @@ export default function FAQSection() {
   };
 
   return (
-    <section className='py-24 bg-white relative overflow-hidden'>
+    <section 
+      className='py-24 relative overflow-hidden transition-colors duration-300'
+      style={{ backgroundColor: 'var(--color-background)' }}
+    >
       {/* Background Elements */}
       <div className='absolute inset-0 opacity-5'>
         <div className='absolute top-20 left-20 w-64 h-64 bg-yellow-200 rounded-full blur-3xl'></div>
@@ -60,11 +63,17 @@ export default function FAQSection() {
       <div className='relative z-10 max-w-4xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20'>
         {/* Section Header */}
         <div className='text-center mb-16'>
-          <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8'>
+          <h2 
+            className='text-4xl md:text-5xl lg:text-6xl font-bold mb-8 transition-colors duration-300'
+            style={{ color: 'var(--color-text-primary)' }}
+          >
             Frequently Asked
             <span className='text-yellow-600'> Questions</span>
           </h2>
-          <p className='text-xl md:text-2xl text-gray-600 leading-relaxed'>
+          <p 
+            className='text-xl md:text-2xl leading-relaxed transition-colors duration-300'
+            style={{ color: 'var(--color-text-secondary)' }}
+          >
             Everything you need to know about CRACKED and our community
           </p>
         </div>
@@ -76,14 +85,32 @@ export default function FAQSection() {
             {faqs.slice(0, 5).map((faq, index) => (
               <div
                 key={index}
-                className='group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden'
+                className='group rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden'
+                style={{ 
+                  backgroundColor: 'var(--color-background-secondary)',
+                  borderColor: 'var(--color-border)',
+                  border: '1px solid'
+                }}
               >
                 {/* Question */}
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className='w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200'
+                  className='w-full px-6 py-5 text-left flex items-center justify-between transition-colors duration-200'
+                  style={{ 
+                    backgroundColor: 'transparent',
+                    color: 'var(--color-text-primary)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--color-background-tertiary)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
                 >
-                  <h3 className='text-lg font-semibold text-gray-900 pr-4'>
+                  <h3 
+                    className='text-lg font-semibold pr-4 transition-colors duration-300'
+                    style={{ color: 'var(--color-text-primary)' }}
+                  >
                     {faq.question}
                   </h3>
                   <div className='flex-shrink-0'>
@@ -100,8 +127,14 @@ export default function FAQSection() {
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}>
                   <div className='px-6 pb-5'>
-                    <div className='border-t border-gray-100 pt-4'>
-                      <p className='text-gray-600 leading-relaxed whitespace-pre-line text-sm'>
+                    <div 
+                      className='border-t pt-4'
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      <p 
+                        className='leading-relaxed whitespace-pre-line text-sm transition-colors duration-300'
+                        style={{ color: 'var(--color-text-secondary)' }}
+                      >
                         {faq.answer}
                       </p>
                     </div>
@@ -116,14 +149,32 @@ export default function FAQSection() {
             {faqs.slice(5).map((faq, index) => (
               <div
                 key={index + 5}
-                className='group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden'
+                className='group rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden'
+                style={{ 
+                  backgroundColor: 'var(--color-background-secondary)',
+                  borderColor: 'var(--color-border)',
+                  border: '1px solid'
+                }}
               >
                 {/* Question */}
                 <button
                   onClick={() => toggleFAQ(index + 5)}
-                  className='w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200'
+                  className='w-full px-6 py-5 text-left flex items-center justify-between transition-colors duration-200'
+                  style={{ 
+                    backgroundColor: 'transparent',
+                    color: 'var(--color-text-primary)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--color-background-tertiary)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
                 >
-                  <h3 className='text-lg font-semibold text-gray-900 pr-4'>
+                  <h3 
+                    className='text-lg font-semibold pr-4 transition-colors duration-300'
+                    style={{ color: 'var(--color-text-primary)' }}
+                  >
                     {faq.question}
                   </h3>
                   <div className='flex-shrink-0'>
@@ -140,8 +191,14 @@ export default function FAQSection() {
                   openIndex === index + 5 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}>
                   <div className='px-6 pb-5'>
-                    <div className='border-t border-gray-100 pt-4'>
-                      <p className='text-gray-600 leading-relaxed whitespace-pre-line text-sm'>
+                    <div 
+                      className='border-t pt-4'
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      <p 
+                        className='leading-relaxed whitespace-pre-line text-sm transition-colors duration-300'
+                        style={{ color: 'var(--color-text-secondary)' }}
+                      >
                         {faq.answer}
                       </p>
                     </div>

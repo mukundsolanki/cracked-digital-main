@@ -203,12 +203,13 @@ export default function ScrollingCodeSnippet() {
       `}</style>
       <div className='absolute top-0 right-0 w-60 sm:w-72 md:w-80 h-full overflow-hidden hidden sm:block'>
         <div
-          className='absolute right-4 sm:right-6 font-mono text-xs text-gray-700 leading-relaxed opacity-15'
+          className='absolute right-4 sm:right-6 font-mono text-xs leading-relaxed opacity-15 transition-colors duration-300'
           style={{
             whiteSpace: 'pre',
             width: 'calc(100% - 2rem)',
             maxWidth: '280px',
             animation: 'scrollUp 60s linear infinite',
+            color: 'var(--color-text-secondary)',
           }}
         >
           {codeLines.join('\n')}
