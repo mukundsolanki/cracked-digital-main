@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { FaLinkedin, FaDiscord, FaInstagram } from 'react-icons/fa';
 import ScrollingCodeSnippet from './ScrollingCodeSnippet';
+import SocialShare from '@/components/ui/SocialShare';
 
 export default function HeroSection() {
   const tags = [
@@ -132,31 +133,51 @@ export default function HeroSection() {
           </div>
 
           {/* Social Media Icons */}
-          <div className='mt-6 sm:mt-8 flex justify-center md:justify-start gap-4 sm:gap-6'>
-            <a
-              href='https://linkedin.com/company/cracked-community'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
-            >
-              <FaLinkedin className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
-            </a>
-            <a
-              href='https://discord.gg/cracked-community'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
-            >
-              <FaDiscord className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
-            </a>
-            <a
-              href='https://instagram.com/cracked.community'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
-            >
-              <FaInstagram className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
-            </a>
+          <div className='mt-6 sm:mt-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-6'>
+            <div className='flex justify-center md:justify-start gap-4 sm:gap-6'>
+              <a
+                href='https://linkedin.com/company/cracked-community'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
+              >
+                <FaLinkedin className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
+              </a>
+              <a
+                href='https://discord.gg/cracked-community'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
+              >
+                <FaDiscord className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
+              </a>
+              <a
+                href='https://instagram.com/cracked.community'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='group p-3 rounded-full bg-gray-100 hover:bg-black transition-all duration-300 hover:scale-110'
+              >
+                <FaInstagram className='w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300' />
+              </a>
+            </div>
+            
+            {/* Share Component */}
+            <div className='sm:ml-4'>
+              <SocialShare 
+                title="CRACKED - Join the Ultimate Technical Community"
+                description="Connect with developers, engineers, and tech enthusiasts. Access expert resources, mentorship, and career growth opportunities."
+                hashtags={['CrackedCommunity', 'TechCommunity', 'Developers', 'TechEvents']}
+                variant="dropdown"
+                className="hidden sm:block"
+              />
+              <SocialShare 
+                title="CRACKED - Join the Ultimate Technical Community"
+                description="Connect with developers, engineers, and tech enthusiasts. Access expert resources, mentorship, and career growth opportunities."
+                hashtags={['CrackedCommunity', 'TechCommunity', 'Developers', 'TechEvents']}
+                variant="horizontal"
+                className="sm:hidden"
+              />
+            </div>
           </div>
         </div>
       </div>

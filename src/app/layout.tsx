@@ -20,20 +20,44 @@ export const metadata: Metadata = {
   description:
     'Join the ultimate technical community for developers, engineers, and tech enthusiasts. Access expert resources, mentorship, and career growth opportunities.',
   keywords:
-    'technical community, developers, programming, software engineering, mentorship, career growth',
+    'technical community, developers, programming, software engineering, mentorship, career growth, CRACKED community, tech events',
   authors: [{ name: 'CRACKED Community' }],
+  metadataBase: new URL('https://cracked-community.vercel.app'),
   openGraph: {
     title: 'CRACKED - Technical Community',
     description:
-      'Join the ultimate technical community for developers, engineers, and tech enthusiasts.',
+      'Join the ultimate technical community for developers, engineers, and tech enthusiasts. Access expert resources, mentorship, and career growth opportunities.',
     type: 'website',
     locale: 'en_US',
+    url: 'https://cracked-community.vercel.app',
+    siteName: 'CRACKED Community',
+    images: [
+      {
+        url: '/hero-background.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'CRACKED - Technical Community',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'CRACKED - Technical Community',
     description:
-      'Join the ultimate technical community for developers, engineers, and tech enthusiasts.',
+      'Join the ultimate technical community for developers, engineers, and tech enthusiasts. Access expert resources, mentorship, and career growth opportunities.',
+    images: ['/hero-background.jpg'],
+    creator: '@CrackedCommunity',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

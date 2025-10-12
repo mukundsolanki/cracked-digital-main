@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { EnvelopeIcon, PaperAirplaneIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import SocialShare from '@/components/ui/SocialShare';
 
 export default function ContactHero() {
   const [formData, setFormData] = useState({
@@ -61,9 +62,19 @@ export default function ContactHero() {
             Contact
             <span className='text-yellow-600'> Us</span>
           </h1>
-          <p className='text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed'>
+          <p className='text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8'>
             Have questions or need help? We&apos;re here to assist you. Reach out to us and we&apos;ll get back to you as soon as possible.
           </p>
+          
+          {/* Share Section */}
+          <div className='flex justify-center'>
+            <SocialShare 
+              title="Contact CRACKED Technical Community"
+              description="Get in touch with CRACKED community for partnerships, collaborations, questions, or support. We'd love to hear from you!"
+              hashtags={['ContactCRACKED', 'TechCommunity', 'GetInTouch', 'Partnership']}
+              variant="horizontal"
+            />
+          </div>
         </div>
 
         {/* Contact Form */}

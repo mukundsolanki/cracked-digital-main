@@ -4,6 +4,7 @@ import {
   RocketLaunchIcon,
   GlobeAltIcon,
 } from '@heroicons/react/24/outline';
+import SocialShare from '@/components/ui/SocialShare';
 
 const values = [
   {
@@ -44,23 +45,38 @@ export default function AboutSection() {
       <div className='relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20'>
         {/* Section Header - Left Aligned */}
         <div className='mb-20'>
-          <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 text-left'>
-            Our
-            <span className='text-yellow-600'> Story</span>
-          </h2>
-          <p className='text-xl md:text-2xl text-gray-600 leading-relaxed text-left'>
-            Founded with a vision to democratize technical education and create
-            a supportive ecosystem for developers worldwide. We empower
-            developers of all levels with the knowledge, tools, and community
-            support they need to excel in their careers and contribute
-            meaningfully to the tech industry. We believe that great software is
-            built by great developers, and great developers are nurtured in
-            great communities. Our vision is to become the world&apos;s leading
-            platform for technical education and developer community, where
-            anyone can learn, grow, and achieve their full potential. We
-            envision a future where technology education is accessible,
-            practical, and driven by real-world applications.
-          </p>
+          <div className='flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8'>
+            <div>
+              <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 text-left'>
+                Our
+                <span className='text-yellow-600'> Story</span>
+              </h2>
+              <p className='text-xl md:text-2xl text-gray-600 leading-relaxed text-left'>
+                Founded with a vision to democratize technical education and create
+                a supportive ecosystem for developers worldwide. We empower
+                developers of all levels with the knowledge, tools, and community
+                support they need to excel in their careers and contribute
+                meaningfully to the tech industry. We believe that great software is
+                built by great developers, and great developers are nurtured in
+                great communities. Our vision is to become the world&apos;s leading
+                platform for technical education and developer community, where
+                anyone can learn, grow, and achieve their full potential. We
+                envision a future where technology education is accessible,
+                practical, and driven by real-world applications.
+              </p>
+            </div>
+            
+            {/* Share Section */}
+            <div className='lg:mt-8'>
+              <SocialShare 
+                title="Learn About CRACKED - Technical Community"
+                description="Discover our story and mission to democratize technical education and create a supportive ecosystem for developers worldwide."
+                hashtags={['AboutCRACKED', 'TechCommunity', 'DeveloperEducation', 'TechStory']}
+                variant="vertical"
+                className="lg:sticky lg:top-8"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Values Grid */}
