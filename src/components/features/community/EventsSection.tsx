@@ -1,34 +1,9 @@
 import EventCard from './EventCard';
 
-const events = [
+const upcomingEvents = [
   {
-    date: '27th September',
-    title: 'Virtual Event: LinkedIn Profile Building',
-    description:
-      'Learn how to create a killer LinkedIn profile that gets noticed by recruiters and industry pros.',
-    highlights: [
-      'Profile optimization tips',
-      'Personal branding hacks',
-      'Networking strategies',
-    ],
-    emoji: '📅',
-    registrationUrl: 'https://luma.com/event/evt-cHBtbFCQHNN2brM',
-  },
-  {
-    date: '4th October',
-    title: 'Hacktoberfest 2025',
-    description:
-      'Join us in celebrating open-source with the global Hacktoberfest community!',
-    highlights: [
-      'Learn how to contribute to open-source',
-      'Get mentorship for your first PR',
-      'Earn cool Hacktoberfest swag',
-    ],
-    emoji: '🎉',
-  },
-  {
-    date: '29th October',
-    title: '10-Hour Hackathon',
+    date: '16th November',
+    title: '8-Hour Hackathon',
     description: 'Get ready for a marathon of creativity and problem-solving!',
     highlights: [
       'Build projects in real-time',
@@ -64,20 +39,20 @@ export default function EventsSection() {
         {/* Section Header */}
         <div className='mb-20'>
           <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 text-left'>
-            Community
+            Upcoming
             <span className='text-yellow-600'> Events</span>
           </h2>
           <p className='text-xl md:text-2xl text-gray-600 leading-relaxed text-left'>
-            Join our community events and level up your skills with hands-on
-            workshops, hackathons, and networking opportunities. Connect with
-            like-minded developers and accelerate your growth in the tech
-            industry.
+            Join our upcoming community events and level up your skills with
+            hands-on workshops, hackathons, and networking opportunities.
+            Connect with like-minded developers and accelerate your growth in
+            the tech industry.
           </p>
         </div>
 
         {/* Events Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-          {events.map((event, index) => (
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          {upcomingEvents.map((event, index) => (
             <EventCard
               key={index}
               date={event.date}
@@ -85,7 +60,6 @@ export default function EventsSection() {
               description={event.description}
               highlights={event.highlights}
               emoji={event.emoji}
-              registrationUrl={event.registrationUrl}
             />
           ))}
         </div>

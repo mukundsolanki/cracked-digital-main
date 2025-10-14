@@ -1,14 +1,18 @@
 import { Metadata } from 'next';
 import EventsSection from '@/components/features/community/EventsSection';
+import PastEventsSection from '@/components/features/community/PastEventsSection';
 import SocialShare from '@/components/ui/SocialShare';
 
 export const metadata: Metadata = {
   title: 'Community Events - CRACKED Technical Community',
-  description: 'Join CRACKED community events! Register for upcoming tech events, workshops, and networking sessions. Connect with fellow developers and grow your career.',
-  keywords: 'CRACKED events, tech events, developer workshops, networking, community events, tech meetups, LinkedIn sessions',
+  description:
+    'Join CRACKED community events! Register for upcoming tech events, workshops, and networking sessions. Connect with fellow developers and grow your career.',
+  keywords:
+    'CRACKED events, tech events, developer workshops, networking, community events, tech meetups, LinkedIn sessions',
   openGraph: {
     title: '🚀 Join CRACKED Community Events',
-    description: 'Register for upcoming tech events, workshops, and networking sessions. Connect with fellow developers and grow your career!',
+    description:
+      'Register for upcoming tech events, workshops, and networking sessions. Connect with fellow developers and grow your career!',
     type: 'website',
     images: [
       {
@@ -22,7 +26,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '🚀 Join CRACKED Community Events',
-    description: 'Register for upcoming tech events, workshops, and networking sessions. Connect with fellow developers and grow your career!',
+    description:
+      'Register for upcoming tech events, workshops, and networking sessions. Connect with fellow developers and grow your career!',
     images: ['/hero-background.jpg'],
   },
 };
@@ -42,14 +47,20 @@ export default function CommunityPage() {
               Join us on September 27th for an interactive session on LinkedIn
               profile building. Register now to secure your spot!
             </p>
-            
+
             {/* Event Share Section */}
             <div className='flex justify-center mb-8'>
-              <SocialShare 
-                title="🚀 Join CRACKED Community Event - LinkedIn Profile Building Session"
-                description="Interactive session on LinkedIn profile building. Learn from experts and connect with fellow developers!"
-                hashtags={['CrackedEvent', 'LinkedInTips', 'TechCommunity', 'CareerGrowth', 'Networking']}
-                variant="dropdown"
+              <SocialShare
+                title='🚀 Join CRACKED Community Event - LinkedIn Profile Building Session'
+                description='Interactive session on LinkedIn profile building. Learn from experts and connect with fellow developers!'
+                hashtags={[
+                  'CrackedEvent',
+                  'LinkedInTips',
+                  'TechCommunity',
+                  'CareerGrowth',
+                  'Networking',
+                ]}
+                variant='dropdown'
               />
             </div>
           </div>
@@ -71,6 +82,7 @@ export default function CommunityPage() {
       </section>
 
       <EventsSection />
+      <PastEventsSection />
     </main>
   );
 }
