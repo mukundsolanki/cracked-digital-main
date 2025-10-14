@@ -34,15 +34,17 @@ export function useShareableUrl() {
 
     const baseUrl = window.location.origin;
     const fullPath = path ? `${baseUrl}${path}` : currentUrl;
-    
+
     if (!utmParams) return fullPath;
 
     const url = new URL(fullPath);
-    
+
     if (utmParams.source) url.searchParams.set('utm_source', utmParams.source);
     if (utmParams.medium) url.searchParams.set('utm_medium', utmParams.medium);
-    if (utmParams.campaign) url.searchParams.set('utm_campaign', utmParams.campaign);
-    if (utmParams.content) url.searchParams.set('utm_content', utmParams.content);
+    if (utmParams.campaign)
+      url.searchParams.set('utm_campaign', utmParams.campaign);
+    if (utmParams.content)
+      url.searchParams.set('utm_content', utmParams.content);
 
     return url.toString();
   };
@@ -61,7 +63,12 @@ export function useShareableUrl() {
       source: platform,
       medium: 'social',
       campaign: 'community_sharing',
-      content: platform === 'twitter' ? 'tweet' : platform === 'linkedin' ? 'post' : 'share'
+      content:
+        platform === 'twitter'
+          ? 'tweet'
+          : platform === 'linkedin'
+          ? 'post'
+          : 'share',
     });
   };
 
@@ -92,20 +99,21 @@ export function useShareableUrl() {
     const shareUrl = shareData.url || generateSocialUrl(platform);
     const encodedUrl = encodeForUrl(shareUrl);
     const encodedTitle = encodeForUrl(shareData.title || '');
-    const encodedDescription = encodeForUrl(shareData.description || '');
+    // const encodedDescription = encodeForUrl(shareData.description || '');
 
     switch (platform) {
       case 'twitter':
-        const hashtags = shareData.hashtags?.map(tag => `#${tag}`).join(' ') || '';
+        const hashtags =
+          shareData.hashtags?.map(tag => `#${tag}`).join(' ') || '';
         const encodedHashtags = encodeForUrl(hashtags);
         return `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}%20${encodedHashtags}`;
-      
+
       case 'linkedin':
         return `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
-      
+
       case 'facebook':
         return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedTitle}`;
-      
+
       default:
         return shareUrl;
     }
@@ -136,9 +144,10 @@ export function useShareableUrl() {
   const openShareWindow = (url: string, platform?: string): void => {
     if (!isClient) return;
 
-    const windowFeatures = platform === 'twitter' || platform === 'facebook'
-      ? 'width=600,height=400,scrollbars=yes,resizable=yes'
-      : 'width=600,height=600,scrollbars=yes,resizable=yes';
+    const windowFeatures =
+      platform === 'twitter' || platform === 'facebook'
+        ? 'width=600,height=400,scrollbars=yes,resizable=yes'
+        : 'width=600,height=600,scrollbars=yes,resizable=yes';
 
     window.open(url, '_blank', windowFeatures);
   };

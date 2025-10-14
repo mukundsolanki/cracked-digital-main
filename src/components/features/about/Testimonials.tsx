@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { StarIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -115,15 +116,17 @@ const Testimonials = () => {
 
                     {/* Quote */}
                     <blockquote className='text-xl md:text-2xl text-gray-800 leading-relaxed text-center mb-8 font-medium'>
-                      "{testimonial.content}"
+                      {testimonial.content}
                     </blockquote>
 
                     {/* Author Info */}
                     <div className='flex items-center justify-center space-x-4'>
                       <div className='w-16 h-16 rounded-full bg-gray-200 overflow-hidden'>
-                        <img
+                        <Image
                           src={testimonial.image}
                           alt={testimonial.name}
+                          width={50}
+                          height={50}
                           className='w-full h-full object-cover'
                         />
                       </div>

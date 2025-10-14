@@ -113,7 +113,7 @@ export default function PastEventsSection() {
             </h2>
             <p className='text-xl md:text-2xl text-gray-600 leading-relaxed text-left'>
               Relive the amazing moments from our previous events. See what you
-              missed and get excited for what's coming next!
+              missed and get excited for what&apos;s coming next!
             </p>
           </div>
 
