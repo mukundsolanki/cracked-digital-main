@@ -44,30 +44,30 @@ export default function CommunityPage() {
               <span className='text-yellow-600'> Upcoming Event</span>
             </h2>
             <p className='text-xl md:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-8'>
-              Join us on September 27th for an interactive session on LinkedIn
-              profile building. Register now to secure your spot!
+              Join us on November 16th for an 8-hour hackathon — build,
+              collaborate, and compete for exciting prizes!
             </p>
 
             {/* Event Share Section */}
             <div className='flex justify-center mb-8'>
-              <SocialShare
-                title='🚀 Join CRACKED Community Event - LinkedIn Profile Building Session'
-                description='Interactive session on LinkedIn profile building. Learn from experts and connect with fellow developers!'
+              {/* <SocialShare
+                title='⏱️ Join the CRACKED 8-Hour Hackathon'
+                description='Get ready for a marathon of creativity and problem-solving! Build, collaborate, and win exciting prizes on November 16th.'
                 hashtags={[
-                  'CrackedEvent',
-                  'LinkedInTips',
+                  'CrackedHackathon',
                   'TechCommunity',
-                  'CareerGrowth',
-                  'Networking',
+                  'Innovation',
+                  'Teamwork',
+                  'CodingChallenge',
                 ]}
                 variant='dropdown'
-              />
+              /> */}
             </div>
           </div>
 
           <div className='flex justify-center'>
-            <iframe
-              src='https://luma.com/embed/event/evt-cHBtbFCQHNN2brM/simple'
+            {/* <iframe
+              src='https://luma.com/embed/event/evt-NEW_EVENT_ID/simple' // Replace with actual Luma embed link
               width='600'
               height='450'
               frameBorder='1'
@@ -76,7 +76,15 @@ export default function CommunityPage() {
               aria-hidden='false'
               tabIndex={0}
               className='w-full max-w-2xl'
-            />
+            /> */}
+            <div className='text-center border border-gray-300 rounded-xl p-10 max-w-2xl w-full bg-gray-50'>
+              <h3 className='text-2xl md:text-3xl font-semibold text-gray-800 mb-4'>
+                Registration Opening Soon 🚀
+              </h3>
+              <p className='text-lg text-gray-600'>
+                Stay tuned — registrations will be open shortly! 😊
+              </p>
+            </div>
           </div>
         </div>
       </section>
